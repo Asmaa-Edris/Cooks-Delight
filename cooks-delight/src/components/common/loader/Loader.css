@@ -87,3 +87,23 @@
     opacity: 0.8;
   }
 }
+@media (max-width: 480px) {
+    .loader-container {
+        width: 180px;
+        height: 180px;
+    }
+    .ring-outer {
+        width: 160px;
+        height: 160px;
+    }
+    .ring-inner {
+        width: 140px;
+        height: 140px;
+    }
+    .loader-text {
+        font-size: 1.5rem;
+    }
+    .loader-text span {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "t1",
+    "title": "Dry Your Meat",
+    "description": "Always pat meat dry with paper towels before searing to get a perfect crust.",
+    "importance": "Crucial",
+    "icon": "fire"
+  },
+  {
+    "id": "t2",
+    "title": "Don't Crowd the Pan",
+    "description": "Too much food drops the temperature; food will boil instead of frying.",
+    "importance": "High",
+    "icon": "utensils"
+  },
+  {
+    "id": "t3",
+    "title": "Season in Layers",
+    "description": "Don't just salt at the end. Seasoning throughout builds a deeper flavor.",
+    "importance": "Essential",
+    "icon": "salt"
+  },
+  {
+    "id": "t4",
+    "title": "Rest Your Meat",
+    "description": "Let cooked meat rest for 5-10 minutes to keep the juices inside.",
+    "importance": "High",
+    "icon": "clock"
+  },
+  {
+    "id": "t5",
+    "title": "Acid is the Key",
+    "description": "If a dish tastes flat, add lemon or vinegar to brighten all other flavors.",
+    "importance": "High",
+    "icon": "lemon"
+  },
+  {
+    "id": "t6",
+    "title": "Sharp Knives Only",
+    "description": "Dull knives are more dangerous as they are more likely to slip.",
+    "importance": "Crucial",
+    "icon": "shield"
+  },
+  {
+    "id": "t7",
+    "title": "Taste as You Go",
+    "description": "The only way to know if it needs more seasoning is to taste it constantly.",
+    "importance": "Essential",
+    "icon": "eye"
+  },
+  {
+    "id": "t8",
+    "title": "Room Temp Eggs",
+    "description": "Essential for perfect emulsions and fluffy results in baking.",
+    "importance": "Medium",
+    "icon": "egg"
+  },
+  {
+    "id": "t9",
+    "title": "Preheat Your Pan",
+    "description": "Always heat your pan before adding oil and food to prevent sticking.",
+    "importance": "High",
+    "icon": "bolt"
+  },
+  {
+    "id": "t10",
+    "title": "Save Pasta Water",
+    "description": "The starchy 'liquid gold' helps your sauce stick perfectly to the noodles.",
+    "importance": "Medium",
+    "icon": "water"
+  },
+  {
+    "id": "t11",
+    "title": "Freeze Your Scraps",
+    "description": "Save onion skins and veggie tops in the freezer to make homemade broth.",
+    "importance": "Low",
+    "icon": "archive"
+  },
+  {
+    "id": "t12",
+    "title": "Clean as You Go",
+    "description": "Keeps the kitchen manageable and makes the cooking process enjoyable.",
+    "importance": "High",
+    "icon": "brush"
+  },
+  {
+    "id": "t13",
+    "title": "Use Fresh Spices",
+    "description": "Spices lose flavor after 6 months. Replace them regularly for best taste.",
+    "importance": "Medium",
+    "icon": "leaf"
+  },
+  {
+    "id": "t14", "title": "Don't Peek in Oven",
+    "description": "Opening the door drops the temperature significantly and ruins the rise.",
+    "importance": "Medium",
+    "icon": "eye-slash"
+  },
+  {
+    "id": "t15",
+    "title": "Zest Before Juicing",
+    "description": "It is much easier to zest a citrus fruit while it is still whole.",
+    "importance": "Low",
+    "icon": "info-circle"
+  },
+  {
+    "id": "t16",
+    "title": "Use a Timer",
+    "description": "Never rely on memory. Use a timer to avoid overcooking your precious meals.",
+    "importance": "High",
+    "icon": "stopwatch"
+  },
+  {
+    "id": "t17",
+    "title": "Keep a Trash Bowl",
+    "description": "Place a bowl on your counter for scraps to save trips to the bin.",
+    "importance": "Medium",
+    "icon": "trash"
+  },
+  {
+    "id": "t18",
+    "title": "Wet Towel Trick",
+    "description": "Put a damp paper towel under your board to keep it from sliding.",
+    "importance": "Crucial",
+    "icon": "anchor"
+  },
+  {
+    "id": "t19",
+    "title": "Rotate Your Trays",
+    "description": "Most ovens have hot spots. Rotate your trays halfway through baking.",
+    "importance": "Medium",
+    "icon": "sync"
+  },
+  {
+    "id": "t20",
+    "title": "Measure Twice",
+    "description": "Especially in baking, accuracy is everything. Double check your measurements.",
+    "importance": "Essential",
+    "icon": "check-square"
+  }
+]

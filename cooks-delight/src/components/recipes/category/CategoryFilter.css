@@ -1,0 +1,115 @@
+/* =============================================
+   CategoryFilter.css — Premium Cooking Blog
+   ============================================= */
+
+.category-filter {
+  margin-bottom: 32px;
+}
+
+.category-filter__label {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* --- Scroll Track --- */
+.category-filter__track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 4px 16px; /* Extra bottom padding for shadow visibility */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.category-filter__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Pill Styling --- */
+.category-filter__pill {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background-color: var(--white);
+  border: 1.5px solid var(--border-color);
+  border-radius: 100px;
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: var(--transition);
+  scroll-snap-align: start;
+  outline: none;
+}
+
+.category-filter__pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.category-filter__pill--active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(255, 107, 53, 0.35);
+}
+
+.category-filter__pill--active:hover {
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.category-filter__icon {
+  font-size: 20px;
+}
+
+.category-filter__count {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--bg-alt);
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.category-filter__pill--active .category-filter__count {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+/* --- Grid Variant --- */
+.category-filter--grid .category-filter__track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  overflow: visible;
+}
+
+.category-filter--grid .category-filter__pill {
+  flex-direction: column;
+  padding: 30px 20px;
+  border-radius: var(--radius-lg);
+  text-align: center;
+  gap: 12px;
+}
+
+.category-filter--grid .category-filter__icon {
+  font-size: 40px;
+}
+
+.category-filter--grid .category-filter__count {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

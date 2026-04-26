@@ -2,8 +2,6 @@ import Navbar from "../../components/layout/navbar/Navbar";
 import Button from "../../components/common/button/Button";
 // import Footer from "../../components/layout/footer/Footer";
 // import Footer from "../../components/layout/banner/Banner";
-
-import RecipeCard from "../../components/recipes/recipesCard/RecipeCard";
 import ChefBio from "./ChefBio";
 import FeaturedRecipes from "./FeaturedRecipes";
 import "./about.css";
@@ -19,7 +17,7 @@ import Image8 from "./imgs/Image7.png";
 import { motion } from "framer-motion";
 
 export default function About() {
-  const recipes = [1, 2];
+  
 
   return (
     <>

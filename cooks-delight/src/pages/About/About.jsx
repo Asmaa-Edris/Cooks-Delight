@@ -1,7 +1,7 @@
 import Navbar from "../../components/layout/navbar/Navbar";
 import Button from "../../components/common/button/Button";
-// import Footer from "../../components/layout/footer/Footer";
-// import Footer from "../../components/layout/banner/Banner";
+import Footer from "../../components/layout/footer/Footer";
+import Banner from "../../components/layout/banner/Banner";
 
 import RecipeCard from "../../components/recipes/recipesCard/RecipeCard";
 import ChefBio from "./ChefBio";
@@ -77,8 +77,8 @@ export default function About() {
 
       </main>
       
-       {/* <Banner />  */}
-       {/* <Footer />  */}
+       <Banner /> 
+       <Footer /> 
 
     </>
   );

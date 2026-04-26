@@ -1,3 +1,5 @@
-@import url('../src/assets/styles/variable.css');
-@import url('../src/assets/styles/global.css');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* المسارات الصحيحة بناءً على الـ Structure بتاعك */
+@import './assets/styles/variable.css';
+@import './assets/styles/global.css';

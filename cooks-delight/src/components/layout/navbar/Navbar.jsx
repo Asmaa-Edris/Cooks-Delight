@@ -1,96 +1,76 @@
 import { useState } from "react";
+import { NavLink, Link } from "react-router-dom"; 
 import { FiMenu, FiX, FiSearch } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import "./Navbar.css";
-import logo from './Logo.svg'
+import logo from './Logo.svg';
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
-      <nav className="navbar">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-          <span>Cooks </span>
-          <span>Delight</span>
-        </div>
-
-      
-        <ul className="nav-links">
-          <li className="active">HOME</li>
-          <li>RECIPES</li>
-          <li>COOKING TIPS</li>
-          <li>ABOUT US</li>
-        </ul>
-
-        
-        <div className="nav-actions">
-          <button className="icon-btn">
-            <FiSearch />
-          </button>
-
-          <button
-            className="menu-btn icon-btn"
-            onClick={() => setMenuOpen(true)}
-          >
-            <FiMenu />
-          </button>
-        </div>
-      </nav>
-
-
-      {menuOpen && (
-        <div
-          className="mobile-overlay"
-          onClick={() => setMenuOpen(false)}
-        >
-          <div
-            className="mobile-menu"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="menu-header">
-            <div className="menu-logo">
-                <img src={logo} alt="logo" />
-                <span>Cooks Delight</span>
+    <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""}`}>
+      {!menuOpen ? (
+        <>
+          <Link to="/" className="banner__brand">
+            <div className="banner__logo-icon">
+              <img src={logo} alt="Logo" />
             </div>
+            <div className="banner__brand-text">
+              <span className="banner__brand-name">Cooks</span>
+              <span className="banner__brand-sub">Delight</span>
+            </div>
+          </Link>
 
-            <button className="close-btn" onClick={() => setMenuOpen(false)}>
-                <FiX />
+          <ul className="nav-links">
+            <li><NavLink to="/" end>HOME</NavLink></li>
+            <li><NavLink to="/recipes">RECIPES</NavLink></li>
+            <li><NavLink to="/tips">COOKING TIPS</NavLink></li>
+            <li><NavLink to="/about">ABOUT US</NavLink></li>
+          </ul>
+
+          <div className="nav-actions">
+            <button className="search-btn"><FiSearch /></button>
+            <button className="menu-btn" onClick={() => setMenuOpen(true)}>
+              <FiMenu />
             </button>
-            </div>
+          </div>
+        </>
+      ) : (
+        <div className="dropdown-container">
+  <div className="menu-header">
+  <div className="menu-logo">
+    <img src={logo} alt="logo" />
+    <div className="banner__brand-text">
+      <span className="banner__brand-name dropdown-text-white">Cooks</span>
+      <span className="banner__brand-sub dropdown-text-white">Delight</span>
+    </div>
+  </div>
 
-            <ul className="mobile-links">
-            <li>HOME</li>
-            <li>RECIPES</li>
-            <li>COOKING TIPS</li>
-            <li>ABOUT US</li>
-            </ul>
+  <button className="close-btn-styled" onClick={() => setMenuOpen(false)}>
+    <FiX />
+  </button>
+</div>
 
-            <div className="menu-actions">
-            <button className="search-icon">
-                <FiSearch />
-            </button>
+          <ul className="mobile-links">
+            <li><NavLink to="/" onClick={() => setMenuOpen(false)}>HOME</NavLink></li>
+            <li><NavLink to="/recipes" onClick={() => setMenuOpen(false)}>RECIPES</NavLink></li>
+            <li><NavLink to="/tips" onClick={() => setMenuOpen(false)}>COOKING TIPS</NavLink></li>
+            <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>ABOUT US</NavLink></li>
+          </ul>
 
-            <button className="signup-btn">
-                SIGN UP NOW!
-            </button>
-            </div>
-             <div className="socials">
-                <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon facebook">
-                    <FaFacebookF />
-                </a>
+          <div className="menu-actions">
+            <button className="search-icon-mobile"><FiSearch /></button>
+            <button className="signup-btn">SIGN UP NOW!</button>
+          </div>
 
-                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icon instagram">
-                    <FaInstagram />
-                </a>
-
-                <a href="https://youtube.com" target="_blank" rel="noreferrer" className="icon youtube">
-                    <FaYoutube />
-                </a>
-            </div>
+          <div className="socials">
+            <a href="#" className="icon"><FaFacebookF /></a>
+            <a href="#" className="icon"><FaInstagram /></a>
+            <a href="#" className="icon"><FaYoutube /></a>
           </div>
         </div>
       )}
-    </>
+    </nav>
   );
 }

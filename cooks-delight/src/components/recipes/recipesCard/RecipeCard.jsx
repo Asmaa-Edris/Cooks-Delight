@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe }) => {
             {recipe.time} - {recipe.level} - {recipe.serves}
           </span>
 
-          <Button label="VIEW RECIPE" btnstyle="viewRecipe" />
+          <Button label="VIEW RECIPE" btnstyle="outline" > VIEW RECIPE </Button>
         </div>
       </div>
     </div>

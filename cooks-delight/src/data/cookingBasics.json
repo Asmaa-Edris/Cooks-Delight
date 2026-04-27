@@ -1,0 +1,142 @@
+[
+  {
+    "id": "b1",
+    "title": "Mastering Knife Skills",
+    "description": "Learn the 'claw grip' and basic cuts for safety.",
+    "category": "Technique",
+    "readTime": "5 mins"
+  },
+  {
+    "id": "b2",
+    "title": "Understanding Heat Control",
+    "description": "Mastering low, medium, and high heat is crucial.",
+    "category": "Science",
+    "readTime": "4 mins"
+  },
+  {
+    "id": "b3",
+    "title": "Mise en Place Essentials",
+    "description": "Prepare all ingredients before you start the stove.",
+    "category": "Management",
+    "readTime": "3 mins"
+  },
+  {
+    "id": "b4",
+    "title": "Essential Kitchen Tools",
+    "description": "Quality over quantity: knife, pan, and board.",
+    "category": "Equipment",
+    "readTime": "6 mins"
+  },
+  {
+    "id": "b5",
+    "title": "The Art of Sautéing",
+    "description": "How to toss food in a hot pan with a small amount of fat.",
+    "category": "Technique",
+    "readTime": "4 mins"
+  },
+  {
+    "id": "b6",
+    "title": "Baking Soda vs Powder",
+    "description": "Understanding leavening agents for fluffy results.",
+    "category": "Science",
+    "readTime": "7 mins"
+  },
+  {
+    "id": "b7",
+    "title": "How to Store Herbs",
+    "description": "Keep your herbs fresh like flowers in water.",
+    "category": "Storage",
+    "readTime": "3 mins"
+  },
+  {
+    "id": "b8",
+    "title": "Making Homemade Stock",
+    "description": "Simmer veggie scraps for a flavorful base.",
+    "category": "Basics",
+    "readTime": "10 mins"
+  },
+  {
+    "id": "b9",
+    "title": "Plate Presentation",
+    "description": "Eat with your eyes first using simple garnish tips.",
+    "category": "Art",
+    "readTime": "5 mins"
+  },
+  {
+    "id": "b10",
+    "title": "Oil Smoke Points",
+    "description": "Which oils handle high heat without burning.",
+    "category": "Science",
+    "readTime": "5 mins"
+  },
+  {
+    "id": "b11",
+    "title": "Deglazing the Pan",
+    "description": "Turn brown bits into delicious pan sauce.",
+    "category": "Technique",
+    "readTime": "4 mins"
+  },
+  {
+    "id": "b12",
+    "title": "Kitchen Safety Rules",
+    "description": "Essential tips to prevent burns and cuts.",
+    "category": "Management",
+    "readTime": "6 mins"
+  },
+  {
+    "id": "b13",
+    "title": "Rice Cooking Ratios",
+    "description": "Perfect water-to-grain ratio for every rice type.",
+    "category": "Basics",
+    "readTime": "4 mins"
+  },
+  {
+    "id": "b14",
+    "title": "Balancing Flavors",
+    "description": "How sweet, sour, and salty work together.",
+    "category": "Science",
+    "readTime": "8 mins"
+  },
+  {
+    "id": "b15",
+    "title": "Roasting Vegetables",
+    "description": "Get crispy, caramelized veggies in the oven.",
+    "category": "Technique",
+    "readTime": "5 mins"
+  },
+  {
+    "id": "b16",
+    "title": "Pan-Frying Basics",
+    "description": "Golden crust on chicken without sticking.",
+    "category": "Technique",
+    "readTime": "5 mins"
+  },
+  {
+    "id": "b17",
+    "title": "Measuring Techniques",
+    "description": "Accuracy matters in baking ratios.",
+    "category": "Basics",
+    "readTime": "4 mins"
+  },
+  {
+    "id": "b18",
+    "title": "Cleaning Cast Iron",
+    "description": "How to season your skillet for a lifetime.",
+    "category": "Maintenance",
+    "readTime": "6 mins"
+  },
+  {
+    "id": "b19",
+    "title": "The Importance of Acid",
+    "description": "Transform a flat dish with lemon or vinegar.",
+    "category": "Science",
+    "readTime": "3 mins"
+  },
+  {
+    "id": "b20",
+    "title": "Organizing Your Pantry",
+    "description": "A well-organized pantry leads to better meals.",
+    "category": "Management",
+    "readTime": "5 mins"
+  }
+]

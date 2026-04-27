@@ -12,6 +12,8 @@
   --text-dark: #262522;
   --text-gray: #333333;
   --text-black: #000000;
+    --text-light: #FFFBF2;
+
 
   --fs-h1: 80px;      --lh-h1: 1.1;
   --fs-h2: 40px;      --lh-h2: 1.2;
@@ -33,7 +35,7 @@
 
   /* Page Spacing */
   --max-width: 1440px;
-  --container-padding: 80px;
+  --container-padding: 40px;
   --container-padding-m: 20px;
   --section-gap: 100px;
 }

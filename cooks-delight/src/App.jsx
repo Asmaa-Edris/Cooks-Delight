@@ -1,27 +1,52 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from './components/layout/navbar/Navbar';
+import Footer from './components/layout/Footer/Footer';
+import Banner from './components/layout/Banner/Banner'; 
+import Loader from './components/common/Loader/Loader'; 
+import About from './pages/About/About';
+import Home from './pages/Home/Home';
 
+function AppContent() {
+  const [showLoader, setShowLoader] = useState(false);
+  const location = useLocation();
 
-import About from './pages/About/About'; 
+  useEffect(() => {
+    setShowLoader(true);
 
+    const timer = setTimeout(() => {
+      setShowLoader(false);
+    }, 1000);
 
-function App() {
+    return () => clearTimeout(timer);
+  }, [location]); 
+
   return (
-     <>
-      <Router>
-        <div className="App">
-          
-          <Routes>
-            <Route path="/" element={<div>Welcome to Cooks Delight!</div>} />
+    <div className="App">
+      {showLoader && <Loader />}
+      
+      <Navbar /> 
 
-            <Route path="/about" element={<About />} />
-            
-          </Routes>
-        </div>
-      </Router>
-     </>
-  
+      <main>
+        <Routes>
+          <Route path="/about" element={<About />} />
+           <Route path="/" element={<Home />} />
+           <Route path="/home" element={<Home />} />
+
+
+        </Routes>
+      </main>
+
+      <Banner /> 
+      <Footer /> 
+    </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}

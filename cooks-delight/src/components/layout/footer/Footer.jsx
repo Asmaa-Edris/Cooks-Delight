@@ -52,12 +52,12 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        
         <div className="footer__bottom">
           <p className="footer__copyright">
             COPYRIGHT: © {year} COOKS DELIGHT.
           </p>
         </div>
+        
       </div>
     </footer>
   );

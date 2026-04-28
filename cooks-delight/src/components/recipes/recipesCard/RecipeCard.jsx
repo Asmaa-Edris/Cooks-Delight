@@ -1,9 +1,9 @@
 import "./RecipeCard.css";
 import Button from "../../common/button/Button";
 
-const RecipeCard = ({ recipe }) => {
+const RecipeCard = ({ recipe, isTip }) => {
   return (
-    <div className="recipe-card">
+    <div className={`recipe-card ${isTip ? "tip-mode" : ""}`}>
       <div className="recipe-image">
         <img src={recipe.image} alt={recipe.title} />
       </div>

@@ -9,7 +9,7 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 0 20px;
+  padding: 0 20px !important;
 }
 
 /* HERO */
@@ -22,7 +22,6 @@ body {
 }
 
 .hero-left h1 {
-  font-family: Montserrat;
   font-weight: 800;
   font-size: 72px;
   line-height: 1.05;
@@ -68,7 +67,7 @@ body {
 
 }
 .follow-bar span {
-font-family: Roboto;
+font-family:'Roboto' ;
 font-weight: 500;
 font-style: Medium;
 font-size: 12px;
@@ -96,7 +95,6 @@ text-transform: uppercase;
   opacity: 1;
 }
 .chef-bio h2{
-font-family: Montserrat;
 font-weight: 700;
 font-size: 40px;
 line-height: 100%;
@@ -105,7 +103,7 @@ text-transform: uppercase;
 
 }
 .chef-bio p{
-font-family: Roboto;
+font-family: 'Roboto';
 font-weight: 300;
 font-size: 16px;
 line-height: 140%;
@@ -114,9 +112,8 @@ color: #333333CC;
 
 }
 .chef-bio .signature{
-font-family: 'Homemade Apple', cursive;
+font-family: 'Homemade Apple, cursive' !important;
 font-weight: 400;
-font-style: Regular;
 font-size: 21px;
 line-height: 120%;
 }
@@ -124,7 +121,7 @@ line-height: 120%;
 .about-gallery{
 border-radius: 32px;
 border: 1px solid #26252220;
-padding: 16px;
+padding: 16px !important;
 gap: 64px;
 opacity: 1;
 

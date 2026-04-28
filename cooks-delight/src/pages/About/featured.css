@@ -1,7 +1,7 @@
 .featured {
-  margin-top: 80px;
+  margin-top: 80px !important;
   background: #f0ebe1;
-  padding: 40px;
+  padding: 40px !important;
   border-radius: 32px;
   border: 1px solid #26252220;
 }
@@ -15,7 +15,7 @@
 }
 
 .featured-header h2 {
-font-family: Montserrat;
+font-family: 'Montserrat';
 font-weight: 700;
 font-style: Bold;
 font-size: 40px;
@@ -58,10 +58,17 @@ text-transform: uppercase;
   cursor: not-allowed;
 }
 /* CARDS */
-.featured-cards {
+.featured-cards{
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 20px;
+}
+
+.featured-cards.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.featured-cards.six {
+  grid-template-columns: repeat(3, 1fr);
 }
 .featured-cards-wrapper {
   overflow: hidden;
@@ -69,7 +76,8 @@ text-transform: uppercase;
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .featured-cards {
+  .featured-cards.two,
+  .featured-cards.six {
     grid-template-columns: 1fr;
   }
 }

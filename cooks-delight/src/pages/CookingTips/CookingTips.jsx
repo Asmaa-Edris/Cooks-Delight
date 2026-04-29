@@ -8,7 +8,7 @@ export default function CookingTips() {
   
   return (
     <>
-      <Navbar />
+    
 
       <main className="tips-page">
 

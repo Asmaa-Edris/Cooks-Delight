@@ -1,14 +1,11 @@
 import React from 'react';
 import './Home.css';
 
-// استيراد الأيقونات (تأكدي من المسارات في مشروعك)
 import breakfastIcon from '../../assets/icons/breakfast.svg';
 import lunchIcon from '../../assets/icons/lunch.svg';
 import dinnerIcon from '../../assets/icons/dinner.svg';
 import dessertIcon from '../../assets/icons/dessert.svg';
 import quickBiteIcon from '../../assets/icons/quick.svg';
-
-// استيراد الـ Button المشترك بتاعك
 import Button from '../../components/common/button/Button';
 
 const Categories = () => {
@@ -25,7 +22,6 @@ const Categories = () => {
       <div className="container">
         <div className="categories-card">
           
-          {/* الجزء الأيسر: النصوص والزرار */}
           <div className="categories-info">
             <span className="explore-badge">explore</span>
             <h2 className="section-title">our diverse palette</h2>
@@ -37,17 +33,14 @@ const Categories = () => {
             <Button children="see more" />
           </div>
 
-          {/* الجزء الأيمن: قائمة الكاتيجوري */}
           <div className="categories-list">
             {categoriesList.map((item) => (
               <div key={item.id} className="category-item">
                 
-                {/* الأيقونة (ستظهر في أقصى اليسار بفضل space-between) */}
                 <div className="category-icon">
                   <img src={item.icon} alt={item.name} />
                 </div>
                 
-                {/* الاسم (سيظهر في أقصى اليمين بفضل space-between) */}
                 <span className="category-name">{item.name}</span>
                 
               </div>

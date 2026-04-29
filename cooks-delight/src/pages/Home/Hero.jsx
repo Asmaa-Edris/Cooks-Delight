@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import Button from '../../components/common/button/Button';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="hero-section">
       <div className="container">
@@ -14,8 +17,16 @@ const Hero = () => {
                 Explore a world of flavors, discover handcrafted recipes, 
                 and let the aroma of our passion for cooking fill your kitchen
               </p>
-                      <Button children="sign up now!"  btnstyle="sign"/>
-                      <Button children="explore recipes" btnstyle="explore"/>
+              <Button 
+                children="sign up now!"  
+                btnstyle="sign" 
+                onClick={() => navigate('/login')} 
+              />
+              <Button 
+                children="explore recipes" 
+                btnstyle="explore" 
+                onClick={() => navigate('/recipes')} 
+              />
             </div>
           </div>
         </div>

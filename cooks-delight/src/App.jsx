@@ -6,7 +6,8 @@ import Banner from './components/layout/Banner/Banner';
 import Loader from './components/common/Loader/Loader'; 
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
-
+import CookingTips from './pages/CookingTips/CookingTips';
+import Login from './pages/Login/login'
 function AppContent() {
   const [showLoader, setShowLoader] = useState(false);
   const location = useLocation();
@@ -27,11 +28,15 @@ function AppContent() {
       
       <Navbar /> 
 
-      <main>
+      <main >
         <Routes>
           <Route path="/about" element={<About />} />
+                    <Route path="/login" element={<Login />} />
+
            <Route path="/" element={<Home />} />
            <Route path="/home" element={<Home />} />
+                  <Route path="/tips" element={<CookingTips />} />
+
 
 
         </Routes>

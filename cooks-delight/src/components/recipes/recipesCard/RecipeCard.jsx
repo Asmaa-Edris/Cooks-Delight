@@ -12,13 +12,14 @@ const RecipeCard = ({ recipe, isTip }) => {
 
         <p className="recipe-desc">{recipe.description}</p>
 
-        <div className="recipe-footer">
-          <span className="recipe-meta">
-            {recipe.time} - {recipe.level} - {recipe.serves}
-          </span>
-
-          <Button label="VIEW RECIPE" btnstyle="outline" > VIEW RECIPE </Button>
-        </div>
+       <div className="recipe-footer">
+  <span className="recipe-meta">
+    {recipe.time} - {recipe.level} - {recipe.serves}
+  </span>
+  <Button btnstyle="outline" className="recipe-btn"> 
+    VIEW RECIPE 
+  </Button>
+</div>
       </div>
     </div>
   );

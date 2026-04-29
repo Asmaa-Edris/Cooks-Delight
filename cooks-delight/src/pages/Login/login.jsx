@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 export default function Login() {
   return (
     <>
-      <Navbar />
-
       <main className="login-page">
 
         <div className="login-container">

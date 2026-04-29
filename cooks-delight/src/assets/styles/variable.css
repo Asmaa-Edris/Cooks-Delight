@@ -2,6 +2,7 @@
   /* Brand Colors */
   --primary-red: #FF6653;
   --primary-orange: #FFA032;
+  --primary-orange-dark: #dd8108;
   --primary-green: #9FDC26;
   --primary-blue: #C4E5FC;
 
@@ -10,7 +11,7 @@
   --bg-overlay: rgba(185, 183, 179, 0.08);
 
   --text-dark: #262522;
-  --text-gray: #333333;
+  --text-gray: #8a8989;
   --text-black: #000000;
     --text-light: #FFFBF2;
 
@@ -34,8 +35,8 @@
   --br-btn-m: 16px;
 
   /* Page Spacing */
-  --max-width: 1440px;
-  --container-padding: 40px;
+   --max-width: 1440px;
+  --container-padding: 80px;
   --container-padding-m: 20px;
-  --section-gap: 100px;
+  --section-gap: 100px;    
 }

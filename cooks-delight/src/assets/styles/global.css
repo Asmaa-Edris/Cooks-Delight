@@ -34,9 +34,9 @@ p {
 
 /* Layout Containers */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+  max-width: var(--max-width)!important;
+  margin: 0 auto!important;
+  padding: 0 var(--container-padding)!important;
 }
 
 /*  Button Style */

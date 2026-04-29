@@ -1,83 +1,99 @@
-.featured {
-  margin-top: 80px !important;
-  background: #f0ebe1;
-  padding: 40px !important;
-  border-radius: 32px;
-  border: 1px solid #26252220;
+.featured-recipes {
+  margin: 100px 0; 
 }
 
-/* HEADER */
+.featured {
+  background: var(--bg-main); 
+  padding: 100px 60px; 
+  border-radius: 40px;
+  border: 1px solid rgba(38, 37, 34, 0.1);
+  width: 100%; 
+  max-width: 1320px;
+  margin: 0 auto; 
+  box-sizing: border-box;
+}
+
 .featured-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 60px; 
 }
 
 .featured-header h2 {
-font-family: 'Montserrat';
-font-weight: 700;
-font-style: Bold;
-font-size: 40px;
-line-height: 100%;
-letter-spacing: 1%;
-text-transform: uppercase;
-
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 40px; 
+  text-transform: uppercase;
+  color: var(--text-dark);
 }
 
-/* ARROWS */
-.arrows  {
-  display: flex;
-}
-
-.arrows button {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid #26252230;
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-right: 5px;
-}
-
-.arrows button svg {
-  font-size: 18px;
-}
-
-.arrows button:hover {
-  background: #262522;
-  color: white;
-}
-
-.arrows button:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-/* CARDS */
-.featured-cards{
+.featured-cards {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 40px; 
 }
 
-.featured-cards.two {
-  grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1024px) {
+  .featured {
+    padding: 60px 30px; 
+  }
+  .featured-cards {
+    gap: 20px; 
+  }
 }
 
-.featured-cards.six {
-  grid-template-columns: repeat(3, 1fr);
-}
-.featured-cards-wrapper {
-  overflow: hidden;
-}
-
-/* MOBILE */
 @media (max-width: 768px) {
-  .featured-cards.two,
-  .featured-cards.six {
-    grid-template-columns: 1fr;
+  .featured {
+    padding: 40px 15px!important;
+  }
+
+  .featured-header {
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .featured-header h2 {
+    font-size: 26px!important; 
+    width: 100%;
+    white-space: normal;
+  }
+
+  .arrows {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 6px!important;
+  }
+
+  .featured-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important; 
+    gap: 10px;
+    width: 100%;
+  }
+
+  .recipe-item-wrapper {
+    width: 100% !important;
+    max-width: none !important; 
+  }
+
+  .card-action-layer {
+    position: static; 
+    padding: 0 20px 20px 20px;
+    width: 100% !important;
+    display: block !important; 
+    box-sizing: border-box;
+  }
+
+  .card-action-layer .btn {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center!important;
+    padding: 12px 0 !important;
+    font-size: 14px !important;
   }
 }

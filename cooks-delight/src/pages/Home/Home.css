@@ -51,12 +51,21 @@
  background-color: var(--primary-orange)!important;
  border: none!important;
 }
+.btn-sign:hover{
+ background-color: var(--primary-orange-dark)!important;
+ transform: translateY(-2px);
+}
 .btn-explore{
     background-color: black!important;
     color: var(--text-light)!important;
     margin-left: 20px;
      border: none!important;
 
+}
+.btn-explore:hover{
+    background-color: var(--text-light)!important;
+    color: black!important;
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {

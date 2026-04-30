@@ -1,40 +1,76 @@
 import React from 'react';
 import './Blog.css';
+import { useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faSignal, faBellConcierge, faWeightScale } from '@fortawesome/free-solid-svg-icons';
-import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { faClock, faBellConcierge, faWeightScale } from '@fortawesome/free-solid-svg-icons';
+import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import pizzaImg from '../../assets/images/pizza.png';
 import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
 
 const Blog = () => {
+    const location = useLocation();
+    const recipeData = location.state?.recipe;
+
+    // Default data if no recipe is passed (Margherita Pizza)
+    const displayData = recipeData ? {
+        title: recipeData.title,
+        image: recipeData.image,
+        description: recipeData.description,
+        time: recipeData.time,
+        level: recipeData.level,
+        serves: recipeData.serves,
+        instructions: recipeData.fullInstructions || [],
+        ingredients: recipeData.fullIngredients || []
+    } : {
+        title: "CLASSIC MARGHERITA PIZZA",
+        image: pizzaImg,
+        description: "Welcome to Cooks Delight, where culinary dreams come alive! Today, we embark on a journey of flavors with a dish that promises to elevate your dining experience – our Classic Margherita Pizza.",
+        time: "40 MINUTES",
+        level: "EASY DIFFICULTY",
+        serves: "4 SERVES",
+        instructions: [
+            "Preheat the oven to 475°F (245°C)",
+            "Roll out the pizza dough and spread tomato sauce evenly",
+            "Top with slices of fresh mozzarella and fresh basil leaves",
+            "Drizzle with olive oil and season with salt and pepper",
+            "Bake in the preheated oven for 12-15 minutes or until the crust is golden brown",
+            "Slice and serve hot"
+        ],
+        ingredients: [
+            "Pizza dough",
+            "Tomato sauce",
+            "Fresh mozzarella cheese",
+            "Fresh basil leaves",
+            "Olive oil",
+            "Salt and pepper to taste"
+        ]
+    };
+
     return (
         <div className="blog-page">
             <header className="blog-header">
                 <div className="container">
                     <div className="recipe-badge">RECIPE</div>
-                    <h1 className="recipe-title">CLASSIC</h1>
-                    <h1 className="recipe-title">MARGHERITA PIZZA</h1>
+                    <h1 className="recipe-title">{displayData.title}</h1>
                     <p className="recipe-desc">
-                        Welcome to Cooks Delight, where culinary dreams come alive!
-                        Today, we embark on a journey of flavors with a dish that promises
-                        to elevate your dining experience – our Classic Margherita Pizza.
+                        {displayData.description}
                     </p>
                     <div className="recipe-meta">
                         <div className="meta-item">
-                            <FontAwesomeIcon icon={faClock} /> 40 MINUTES
+                            <FontAwesomeIcon icon={faClock} /> {displayData.time}
                         </div>
                         <div className="meta-item">
-                            <FontAwesomeIcon icon={faWeightScale} /> EASY DIFFICULTY
+                            <FontAwesomeIcon icon={faWeightScale} /> {displayData.level}
                         </div>
                         <div className="meta-item">
-                            <FontAwesomeIcon icon={faBellConcierge} /> 4 SERVES
+                            <FontAwesomeIcon icon={faBellConcierge} /> {displayData.serves}
                         </div>
                     </div>
                 </div>
             </header>
 
             <section className="recipe-main-image container">
-                <img src={pizzaImg} alt="Classic Margherita Pizza" className="hero-image" />
+                <img src={displayData.image} alt={displayData.title} className="hero-image" />
                 <div className="image-meta">
                     <div className="rating">
                         <span className="stars">★★★★☆</span>
@@ -52,12 +88,9 @@ const Blog = () => {
                     <div className="instructions-section">
                         <h2>INSTRUCTIONS</h2>
                         <div className="steps-list">
-                            <p><strong>Step 1)</strong> Preheat the oven to 475°F (245°C)</p>
-                            <p><strong>Step 2)</strong> Roll out the pizza dough and spread tomato sauce evenly</p>
-                            <p><strong>Step 3)</strong> Top with slices of fresh mozzarella and fresh basil leaves</p>
-                            <p><strong>Step 4)</strong> Drizzle with olive oil and season with salt and pepper</p>
-                            <p><strong>Step 5)</strong> Bake in the preheated oven for 12-15 minutes or until the crust is golden brown</p>
-                            <p><strong>Step 6)</strong> Slice and serve hot</p>
+                            {displayData.instructions.map((step, index) => (
+                                <p key={index}><strong>Step {index + 1})</strong> {step}</p>
+                            ))}
                         </div>
                         <div className="share-pill">
                             <span>SHARE</span>
@@ -73,12 +106,9 @@ const Blog = () => {
                         <div className="ingredients-card">
                             <h3>INGREDIENTS</h3>
                             <ul>
-                                <li>Pizza dough</li>
-                                <li>Tomato sauce</li>
-                                <li>Fresh mozzarella cheese</li>
-                                <li>Fresh basil leaves</li>
-                                <li>Olive oil</li>
-                                <li>Salt and pepper to taste</li>
+                                {displayData.ingredients.map((ingredient, index) => (
+                                    <li key={index}>{ingredient}</li>
+                                ))}
                             </ul>
                         </div>
                         <div className="nutrition-card">
@@ -93,7 +123,6 @@ const Blog = () => {
 
             <section className="similar-recipes container">
                 <RecipeSlider title="Similar RECIPES" />
-
             </section>
 
             <section className="cta-section">
@@ -111,3 +140,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

@@ -70,7 +70,9 @@ export default function About() {
           </div>
         </section>
 
-        <RecipeSlider title="FEATURED RECIPES" />
+        <div style={{ marginTop: "80px", width: "100%", padding: "12px 32px " }}>
+          <RecipeSlider title="FEATURED RECIPES" />
+        </div>
 
       </main>
 

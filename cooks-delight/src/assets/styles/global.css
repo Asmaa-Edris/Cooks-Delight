@@ -1,5 +1,4 @@
-@import './variable.css';
-
+@import './variable.css'; 
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,7 @@
 body {
   background-color: var(--bg-main);
   color: var(--text-dark);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; 
   line-height: var(--lh-p2);
   -webkit-font-smoothing: antialiased;
 }
@@ -35,9 +34,9 @@ p {
 
 /* Layout Containers */
 .container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+  max-width: var(--max-width)!important;
+  margin: 0 auto!important;
+  padding: 0 var(--container-padding)!important;
 }
 
 /*  Button Style */
@@ -69,16 +68,8 @@ p {
   .container {
     padding: 0 var(--container-padding-m);
   }
-
-  h1 {
-    font-size: var(--fs-h1-m);
-  }
-
-  h2 {
-    font-size: var(--fs-h2-m);
-  }
-
-  p {
-    font-size: var(--fs-p1-m);
-  }
+  
+  h1 { font-size: var(--fs-h1-m); }
+  h2 { font-size: var(--fs-h2-m); }
+  p { font-size: var(--fs-p1-m); }
 }

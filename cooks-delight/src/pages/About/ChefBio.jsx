@@ -18,18 +18,18 @@ export default function ChefBio() {
 
           <div className="follow-bar">
             <span>Follow me</span>
-               <div className="icons">
-                    <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon facebook">
-                     <FaFacebookF /></a>
-                    
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icon instagram">
-                        <FaInstagram />
-                    </a>
+            <div className="icons">
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon facebook">
+                <FaFacebookF /></a>
 
-                    <a href="https://youtube.com" target="_blank" rel="noreferrer" className="icon youtube">
-                        <FaYoutube />
-                    </a>
-                </div>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icon instagram">
+                <FaInstagram />
+              </a>
+
+              <a href="https://youtube.com" target="_blank" rel="noreferrer" className="icon youtube">
+                <FaYoutube />
+              </a>
+            </div>
           </div>
         </motion.div>
 

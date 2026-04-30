@@ -44,7 +44,7 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-actions">
-            <div style={{ width: '220px' }}>
+            <div className="desktop-search" style={{ width: '220px' }}>
               <Input
                 type="text"
                 variant="search"
@@ -83,7 +83,7 @@ export default function Navbar() {
           </ul>
 
           <div className="menu-actions" style={{ flexDirection: 'column', alignItems: 'stretch' }}>
-            <div style={{ marginBottom: '10px' }}>
+            <div style={{ marginBottom: '10px', color: 'white' }}>
               <Input
                 type="text"
                 variant="search"

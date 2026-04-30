@@ -1,0 +1,42 @@
+.tips-page {
+  background: #F0EBE1;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px !important;
+}
+/* HERO */
+.tips-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 120px 0;
+  align-items: center;
+}
+
+.tips-hero h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.tips-hero p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: rgba(38,37,34,0.6);
+  max-width: 600px;
+  margin-bottom: 20px;
+
+}
+
+
+
+@media (max-width: 768px) {
+  .tips-hero{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import Navbar from './components/layout/navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
 import Banner from './components/layout/Banner/Banner'; 
 import Loader from './components/common/Loader/Loader'; 
 import ScrollToTop from './components/common/ScrollToTop'; 
+import ProtectedRoute from './components/ProtectedRoute';
 
-import About from './pages/About/About';
 import Home from './pages/Home/Home';
+import About from './pages/About/About';
 import CookingTips from './pages/CookingTips/CookingTips';
 import Login from './pages/Login/login';
 import Register from './pages/register/Register';
@@ -23,23 +25,24 @@ function AppContent() {
 
   useEffect(() => {
     setShowLoader(true);
-    const timer = setTimeout(() => setShowLoader(false), 1000);
+    const timer = setTimeout(() => setShowLoader(false), 800);
     return () => clearTimeout(timer);
   }, [location]); 
 
   return (
     <div className="App">
       {showLoader && <Loader />}
+      
       <Navbar /> 
 
-      <main>
+      <main style={{ minHeight: '80vh' }}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/tips" element={<ProtectedRoute><CookingTips /></ProtectedRoute>} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/tips" element={<CookingTips />} />
         </Routes>
       </main>
 
@@ -56,7 +59,15 @@ function AppContent() {
 export default function App() {
   return (
     <Router>
-      <ToastContainer position="top-right" autoClose={3000} theme="colored" />
+      <ToastContainer 
+        position="top-right" 
+        autoClose={3000} 
+        theme="colored"
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        pauseOnHover
+      />
       <ScrollToTop />
       <AppContent />
     </Router>

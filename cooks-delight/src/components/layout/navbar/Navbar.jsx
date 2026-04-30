@@ -9,10 +9,12 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
+  // التحقق لو إحنا في صفحات الـ Auth عشان نطبق الـ CSS الخاص بإخفاء البردر
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
   return (
-<nav className={`navbar ${menuOpen ? "navbar-expanded" : ""} ${isAuthPage ? "auth-navbar" : ""}`}>      {!menuOpen ? (
+    <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""} ${isAuthPage ? "auth-navbar" : ""}`}>
+      {!menuOpen ? (
         <>
           <Link to="/" className="banner__brand">
             <div className="banner__logo-icon">

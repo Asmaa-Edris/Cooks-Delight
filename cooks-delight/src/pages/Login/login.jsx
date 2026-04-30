@@ -1,39 +1,36 @@
-import Navbar from "../../components/layout/navbar/Navbar";
+import React from "react";
 import LoginForm from "./LoginForm";
-import "./login.css";
+import './loginstyle.css';
 import loginImg from "./login.png";
 import { motion } from "framer-motion";
 
 export default function Login() {
   return (
-    <>
-      <main className="login-page">
+    <main className="login-page">
+      <motion.div 
+        className="login-container"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <motion.div
+          className="login-image"
+          initial={{ clipPath: "inset(0 100% 0 0)" }}
+          animate={{ clipPath: "inset(0 0% 0 0)" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          <img src={loginImg} alt="cooking" />
+        </motion.div>
 
-        <div className="login-container">
-
-          {/* LEFT IMAGE */}
-          <motion.div
-            className="login-image"
-            initial={{ opacity: 0, x: -80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <img src={loginImg} alt="cooking" />
-          </motion.div>
-
-          {/* RIGHT FORM */}
-          <motion.div
-            className="login-form-wrapper"
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <LoginForm />
-          </motion.div>
-
-        </div>
-
-      </main>
-    </>
+        <motion.div
+          className="login-form-wrapper"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <LoginForm />
+        </motion.div>
+      </motion.div>
+    </main>
   );
 }

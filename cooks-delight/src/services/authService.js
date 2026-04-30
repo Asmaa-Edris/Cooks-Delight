@@ -28,20 +28,25 @@ export const authService = {
   },
 
   // Login verification using Email
-  login: async (email, password) => {
-    const users = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-    const userFound = users.find(u => u.email === email && u.password === password);
+  // login verification
+login: async (email, password) => {
+  const users = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  
+  const userByEmail = users.find(u => u.email === email);
 
-    if (userFound) {
-      const token = "session-" + Math.random();
-      localStorage.setItem('userToken', token);
-      localStorage.setItem('userData', JSON.stringify(userFound));
-      return userFound;
-    } else {
-      throw new Error("Invalid email or password!");
-    }
-  },
+  if (!userByEmail) {
+    throw new Error("This account doesn't exist. Please register first.");
+  }
 
+  if (userByEmail.password !== password) {
+    throw new Error("Incorrect password. Please try again.");
+  }
+
+  const token = "session-" + Math.random();
+  localStorage.setItem('userToken', token);
+  localStorage.setItem('userData', JSON.stringify(userByEmail));
+  return userByEmail;
+},
   logout: () => {
     localStorage.removeItem('userToken');
     localStorage.removeItem('userData');

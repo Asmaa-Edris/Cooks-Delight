@@ -83,6 +83,20 @@
     margin-left: 0;
     margin-top: 15px;
   }
+ 
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 5px !important;
+  }
+
+  .btn-explore, .btn-sign {
+    width: 100% !important; 
+    margin-left: 0 !important; 
+    margin-right: 0 !important;
+    display: block !important;
+  }
+ 
 }
 
 

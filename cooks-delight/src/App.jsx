@@ -4,6 +4,8 @@ import Navbar from './components/layout/navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
 import Banner from './components/layout/Banner/Banner'; 
 import Loader from './components/common/Loader/Loader'; 
+import ScrollToTop from './components/common/ScrollToTop'; 
+
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import CookingTips from './pages/CookingTips/CookingTips';
@@ -51,6 +53,7 @@ function AppContent() {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );

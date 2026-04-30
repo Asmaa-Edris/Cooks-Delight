@@ -61,10 +61,10 @@ export default function FeaturedRecipes() {
   if (loading) return <div className="featured-loading">Loading Our Best Recipes...</div>;
 
   return (
-    <div className="featured">
+    <div className="featured container">
       <div className="featured-inner">
         <div className="featured-header">
-          <h2>SIMILAR RECIPES</h2>
+          <h2> FEATURED RECIPES</h2>
           <div className="arrows">
             <button onClick={prev} disabled={index === 0} aria-label="Previous">
               <FiChevronLeft />

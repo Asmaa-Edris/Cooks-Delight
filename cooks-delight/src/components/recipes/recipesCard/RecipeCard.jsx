@@ -3,7 +3,9 @@ import Button from "../../common/button/Button";
 
 const RecipeCard = ({ recipe, isTip }) => {
   return (
-    <div className={`recipe-card ${isTip ? "tip-mode" : ""}`}>
+
+    
+    <div className={` recipe-card ${isTip ? "tip-mode" : ""}` }>
       <div className="recipe-image">
         <img src={recipe.image} alt={recipe.title} />
       </div>

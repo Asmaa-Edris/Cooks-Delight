@@ -30,7 +30,7 @@ const Categories = () => {
               on the lookout for irresistible desserts, our curated selection has 
               something to satisfy every palate.
             </p>
-            <Button children="see more" />
+            <Button children="see more " className="btn-see-more" />
           </div>
 
           <div className="categories-list">

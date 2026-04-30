@@ -9,8 +9,12 @@ import img5 from "../assets/images/image5.png";
 import img6 from "../assets/images/image6.png";
 import img7 from "../assets/images/image7.png";
 import img8 from "../assets/images/image.png";
+import img9 from "../assets/images/about1.jpg";
+import img10 from "../assets/images/about2.jpg";
+import img11 from "../assets/images/about3.jpg";
 
-export const galleryImages = [
+
+export const gallery = [
   {
     id: 1,
     src: img1,
@@ -51,6 +55,26 @@ export const galleryImages = [
     src: img8,
     alt: "Culinary creation 8"
   }
+
+];
+export const galleryImages1 = [
+ 
+  {
+    id: 9,
+    src: img9,
+    alt: "Culinary creation 9"
+  },
+  {
+    id: 10,
+    src: img10,
+    alt: "Culinary creation 10"
+  },
+  {
+    id: 11,
+    src: img11,
+    alt: "Culinary creation 11"
+  }
+
 ];
 
 export const chefStats = [

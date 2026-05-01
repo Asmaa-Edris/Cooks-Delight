@@ -1,4 +1,3 @@
-import Navbar from "../../components/layout/navbar/Navbar";
 import FeaturedRecipes from "../about/FeaturedRecipes";
 import "./cookingTips.css";
 import ToolsSection from "./ToolsSection";

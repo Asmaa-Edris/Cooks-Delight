@@ -1,13 +1,16 @@
-import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
+import FeaturedRecipes from "../about/FeaturedRecipes";
 import "./cookingTips.css";
 import ToolsSection from "./ToolsSection";
 import { motion } from "framer-motion";
 import NourishingSection from './NourishingSection';
+import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
 
 export default function CookingTips() {
 
   return (
     <>
+
+
       <main className="tips-page">
 
         <section className="tips-hero container">
@@ -34,19 +37,12 @@ export default function CookingTips() {
         <ToolsSection />
         <div style={{ marginTop: "15px", width: "100%", padding: "12px 32px " }}>
 
-          <RecipeSlider title="Newest recipes" cardsPerView={2} dataSource="api" />
+          <RecipeSlider title="Newest Recipes" cardsPerView={2} dataSource="api" />
         </div>
-        <div style={{ marginTop: "15px", width: "100%", padding: "12px 32px " }}>
-          <RecipeSlider title="Mastering the Basics" cardsPerView={6} dataSource="basics" buttonText="Read More" noBorder />
-        </div>
-        <div style={{ marginTop: "15px", width: "100%", padding: "12px 32px " }}>
+        <FeaturedRecipes title="Mastering the Basics" cardsPerView={6} dataSource="basics" buttonText="Read More" noBorder />
+        <NourishingSection />
 
-          <NourishingSection />
-        </div>
-        <div style={{ marginTop: "15px", width: "100%", padding: "12px 32px " }}>
-
-          <RecipeSlider title="Tips & Tricks" cardsPerView={6} dataSource="tips" buttonText="Read More" noBorder />
-        </div>
+        <FeaturedRecipes title="Tips & Tricks" cardsPerView={6} dataSource="tips" buttonText="Read More" noBorder />
 
       </main>
     </>

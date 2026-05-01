@@ -1,83 +1,84 @@
-import Button from "../../components/common/button/Button";
-import Banner from "../../components/layout/banner/Banner";
-
-import ChefBio from "./ChefBio";
-import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
-import "./about.css";
-import Image from "./imgs/Image.png";
-import Image2 from "./imgs/Image1.png";
-import Image3 from "./imgs/Image5.png";
-import Image4 from "./imgs/Image2.png";
-import Image5 from "./imgs/Image3.png";
-import Image6 from "./imgs/Image4.png";
-import Image7 from "./imgs/Image6.png";
-import Image8 from "./imgs/Image7.png";
-
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import "./About.css";
+import ChefBio from "./ChefBio";
+import FeaturedRecipes from "./FeaturedRecipes";
+import { gallery } from "../../data/aboutData";
+import Button from "../../components/common/button/Button";
 
 export default function About() {
-  const recipes = [1, 2];
+  const navigate = useNavigate();
 
   return (
-    <>
+    <main className="about-page" style={{ width: '100%', overflowX: 'hidden' }}>
+      <section className="about-hero container">
+        <motion.div
+          className="hero-left"
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <h1>Welcome to<br /> my Culinary Haven!</h1>
+        </motion.div>
 
-
-      <main className="about-page">
-
-
-        <section className="about-hero container">
-
-          <motion.div
-            className="hero-left"
-            initial={{ opacity: 0, x: -60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+        <motion.div
+          className="hero-right"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        >
+          <p>
+            Bonjour and welcome to the heart of my kitchen! I'm Isabella Russo,
+            the culinary enthusiast behind this haven of flavors, Cooks Delight.
+            Join me on a gastronomic journey where each dish carries a story,
+            and every recipe is a crafted symphony of taste.
+          </p>
+          <Button
+            btnstyle="primary"
+            onClick={() => navigate('/recipes')}
           >
-            <h1>Welcome to my Culinary Haven!</h1>
-          </motion.div>
+            Explore Recipes
+          </Button>
+        </motion.div>
+      </section>
 
-          <motion.div
-            className="hero-right"
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p>
-              Bonjour and welcome to the heart of my kitchen! I'm Isabella Russo, the culinary enthusiast behind this haven of flavors, Cooks Delight. Join me on a gastronomic journey where each dish carries a story, and every recipe is a crafted symphony of taste.
-            </p>
-
-            <Button btnstyle="primary">
-              Explore Recipes
-            </Button>
-          </motion.div>
-
-        </section>
-
-
-
-        <section className="about-gallery container">
+      <motion.section
+        className="about-main-container container"
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="content-card">
           <ChefBio />
           <div className="gallery-grid">
-            <img src={Image} />
-            <img src={Image2} />
-            <img src={Image3} />
-            <img src={Image4} />
-            <img src={Image5} />
-            <img src={Image6} />
-            <img src={Image7} />
-            <img src={Image8} />
-
+            {gallery.map((img, index) => (
+              <motion.img
+                key={img.id}
+                src={img.src}
+                alt="Gallery"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: index * 0.1 }}
+              />
+            ))}
           </div>
-        </section>
-
-        <div style={{ marginTop: "80px", width: "100%", padding: "12px 32px " }}>
-          <RecipeSlider title="FEATURED RECIPES" />
         </div>
+      </motion.section>
 
-      </main>
-
-      <Banner />
-
-    </>
+      <motion.section
+        className="featured-recipes"
+        initial={{ opacity: 0, x: 150 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="container">
+          <FeaturedRecipes title={"FEATURED RECIPES"} />
+        </div>
+      </motion.section>
+    </main>
   );
 }

@@ -11,6 +11,8 @@ import Navbar from './components/layout/navbar/Navbar';
 import Footer from './components/layout/footer/Footer';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Recipies from './pages/Home/Recipes';
+
 
 
 function App() {
@@ -23,7 +25,8 @@ function App() {
             <Route path="/" element={<Home />} />
 
             <Route path="/about" element={<About />} />
-            <Route path="/recipes" element={<Blog />} />
+            <Route path="/recipes" element={<Recipies />} />
+            <Route path="/recipe/:id" element={<Blog />} />
             <Route path="/search" element={<Search />} />
             <Route path="/tips" element={<Tips />} />
             <Route path='/login' element={<Login />} />

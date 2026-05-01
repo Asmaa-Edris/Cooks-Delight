@@ -6,7 +6,7 @@ const RecipeCard = ({ recipe }) => {
   const navigate = useNavigate();
 
   const handleViewRecipe = () => {
-    navigate("/blog", { state: { recipe } });
+    navigate(`/recipe/${recipe.id}`);
   };
 
   return (

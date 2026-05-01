@@ -2,6 +2,15 @@
     background-color: var(--bg-main);
     padding-bottom: 80px;
     font-family: var(--font-main);
+
+}
+
+.blog-container {
+    border-radius: 32px;
+    border: 1px solid #26252220;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .blog-header {
@@ -61,7 +70,7 @@
     height: 600px;
     object-fit: cover;
     border-radius: var(--br-main);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .image-meta {
@@ -70,6 +79,16 @@
     align-items: center;
     gap: 40px;
     margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.dot {
+    margin: 0 10px;
+    color: black;
+    font-size: 14px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
 }
 
 .rating {
@@ -99,16 +118,15 @@
     border-radius: 40px;
     font-size: 13px;
     font-weight: 700;
+    background-color: #e54d3b;
 }
 
-.category-tag.pizza {
-    background-color: #ffccc6;
-    color: #e54d3b;
-}
-
-.category-tag.italian {
-    background-color: #d1f196;
-    color: #6da300;
+.cuisine-tag {
+    padding: 8px 24px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    background-color: #6da300;
 }
 
 .recipe-content {
@@ -173,14 +191,16 @@
     gap: 32px;
 }
 
-.ingredients-card, .nutrition-card {
+.ingredients-card,
+.nutrition-card {
     background-color: #fffbf4;
     padding: 40px;
     border-radius: 32px;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.ingredients-card h3, .nutrition-card h3 {
+.ingredients-card h3,
+.nutrition-card h3 {
     font-size: 18px;
     margin-bottom: 32px;
     color: #ff6653;
@@ -256,12 +276,6 @@
     cursor: pointer;
 }
 
-.similar-recipes .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-}
 
 .recipes-grid {
     display: grid;
@@ -273,7 +287,7 @@
     background: white;
     border-radius: var(--br-main);
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .card-img img {
@@ -360,9 +374,11 @@
     .content-grid {
         grid-template-columns: 1fr;
     }
+
     .recipe-title {
         font-size: 48px;
     }
+
     .cta-section {
         margin: 40px 20px;
     }
@@ -372,6 +388,7 @@
     .recipes-grid {
         grid-template-columns: 1fr;
     }
+
     .recipe-meta {
         flex-direction: column;
         gap: 16px;

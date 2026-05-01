@@ -21,9 +21,10 @@ export default function Navbar() {
       navigate(`/search`);
     }
   };
+  const isAuthPage = location.pathname === "/signup" || location.pathname === "/login"
 
   return (
-    <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""}`}>
+    <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""} ${isAuthPage ? "auth-navbar" : ""}`}>
       {!menuOpen ? (
         <>
           <Link to="/" className="banner__brand">

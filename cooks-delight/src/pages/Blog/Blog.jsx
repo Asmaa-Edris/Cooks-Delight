@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Blog.css';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faBellConcierge, faWeightScale } from '@fortawesome/free-solid-svg-icons';
-import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { faClock, faBellConcierge, faWeight } from '@fortawesome/free-solid-svg-icons';
+import { FaFacebook, FaInstagram, FaWeightHanging, FaYoutube } from 'react-icons/fa';
 import pizzaImg from '../../assets/images/pizza.png';
 import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
 import { recipeService } from "../../services/recipeService";
+import { Weight } from 'lucide-react';
 
 const normalizeRecipe = (recipe = {}) => ({
     title: recipe.title || recipe.name || "Untitled Recipe",
@@ -112,7 +113,7 @@ const Blog = () => {
                                 <FontAwesomeIcon icon={faClock} /> {displayData.time}
                             </div>
                             <div className="meta-item">
-                                <FontAwesomeIcon icon={faWeightScale} /> {displayData.difficulty}
+                                <Weight style={{ height: "1rem", width: "1rem" }} />{displayData.difficulty}
                             </div>
                             <div className="meta-item">
                                 <FontAwesomeIcon icon={faBellConcierge} /> {displayData.serves}

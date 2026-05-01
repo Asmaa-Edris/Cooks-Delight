@@ -14,10 +14,10 @@ const LoginForm = () => {
     try {
       await authService.login(email, password);
       toast.success('Welcome back to Cooks Delight!');
-      
+
       setTimeout(() => {
         navigate('/');
-      }, 1500); 
+      }, 1500);
 
     } catch (err) {
       toast.error(err.message || 'Invalid email or password');
@@ -33,31 +33,30 @@ const LoginForm = () => {
       >
         LOG IN
       </motion.h2>
-      
+
       <p className="welcome-text">
-        Welcome back to your kitchen. Log in to access your saved recipes and personal cooking space.
-      </p>
+        Welcome back to your kitchen. Log in to access your saved recipes, favorite dishes, and personal cooking space.      </p>
 
       <form onSubmit={handleSubmit}>
         <div className="input-group">
           <label>EMAIL ADDRESS</label>
-          <input 
-            type="email" 
+          <input
+            type="email"
             placeholder="yourname@mail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required 
+            required
           />
         </div>
 
         <div className="input-group">
           <label>PASSWORD</label>
-          <input 
-            type="password" 
+          <input
+            type="password"
             placeholder=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            required 
+            required
           />
         </div>
 

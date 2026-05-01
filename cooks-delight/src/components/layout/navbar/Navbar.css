@@ -287,4 +287,11 @@ body {
 .auth-navbar {
   border-bottom: none !important;
   border: none !important;
+
+}
+
+.auth-navbar .nav-links,
+.auth-navbar .nav-actions,
+.auth-navbar .menu-btn {
+  display: none !important;
 }

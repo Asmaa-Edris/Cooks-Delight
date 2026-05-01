@@ -1,7 +1,7 @@
 import "./RecipeCard.css";
 import Button from "../../common/button/Button";
 
-const RecipeCard = ({ recipe, isTip }) => {
+const RecipeCard = ({ recipe, isTip, buttonText = "VIEW RECIPE" }) => {
   return (
 
     
@@ -15,12 +15,12 @@ const RecipeCard = ({ recipe, isTip }) => {
         <p className="recipe-desc">{recipe.description}</p>
 
        <div className="recipe-footer">
-  <span className="recipe-meta">
-    {recipe.time} - {recipe.level} - {recipe.serves}
-  </span>
-  <Button btnstyle="outline" className="recipe-btn"> 
-    VIEW RECIPE 
-  </Button>
+        <span className="recipe-meta">
+          {recipe.time} - {recipe.level} - {recipe.serves}
+        </span>
+        <Button btnstyle="outline" className="recipe-btn"> 
+        {buttonText}
+      </Button>
 </div>
       </div>
     </div>

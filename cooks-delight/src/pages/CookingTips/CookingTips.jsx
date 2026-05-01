@@ -3,6 +3,7 @@ import FeaturedRecipes from "../about/FeaturedRecipes";
 import "./cookingTips.css";
 import ToolsSection from "./ToolsSection";
 import { motion } from "framer-motion";
+import NourishingSection from './NourishingSection';
 
 export default function CookingTips() {
   
@@ -33,15 +34,13 @@ export default function CookingTips() {
             </p>
           </motion.div>
         </section>
-
-
         <ToolsSection/>
-        
-        <FeaturedRecipes title="Newest recipes " cardsPerView={2} />
+        <FeaturedRecipes title="Newest recipes" cardsPerView={2} dataSource="api"  />
 
-        
-        <FeaturedRecipes title="Mastering the Basics" cardsPerView={6} />
-        <FeaturedRecipes title="TIps & tricks" cardsPerView={6} />
+        <FeaturedRecipes title="Mastering the Basics" cardsPerView={6} dataSource="basics"  buttonText="Read More"  noBorder />
+        <NourishingSection/>
+
+        <FeaturedRecipes title="Tips & Tricks" cardsPerView={6} dataSource="tips" buttonText="Read More"   noBorder />
 
       </main>
     </>

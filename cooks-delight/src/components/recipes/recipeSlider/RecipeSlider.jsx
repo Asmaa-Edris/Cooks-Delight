@@ -14,8 +14,7 @@ const RecipeSlider = ({ title }) => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const data = await recipeService.getAllRecipes(10); // Fetching 10 recipes for the slider
-        // Mapping the data to match the format used by RecipeCard
+        const data = await recipeService.getAllRecipes(10);
         const mappedRecipes = data.recipes.map(recipe => ({
           id: recipe.id,
           image: recipe.image,

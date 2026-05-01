@@ -137,7 +137,6 @@ const Blog = () => {
                         </div>
                         <span className="dot"> • </span>
 
-
                         <div className="categories">
                             {displayData.categories.slice(0, - 1).map((cat, i) => (
                                 <span key={i} className="category-tag">

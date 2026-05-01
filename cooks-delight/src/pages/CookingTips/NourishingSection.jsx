@@ -3,16 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import Button from "../../components/common/button/Button";
 import "./nourishing.css";
+import data from "../../data/food.json";
+
 
 export default function NourishingSection() {
-    const data = [
-        { image: "/g1.jpg", title: "Gluten-Free Alternatives", desc: "Explore gluten-free options..." },
-        { image: "/g2.jpg", title: "Plant-Based Cooking", desc: "Delight in plant-based meals..." },
-        { image: "/g3.jpg", title: "Allergy-Friendly Substitutions", desc: "Discover allergy-safe ideas..." },
-        { image: "/g1.jpg", title: "Healthy Meals", desc: "Eat better every day..." },
-        { image: "/g2.jpg", title: "Quick Recipes", desc: "Fast & easy meals..." },
-    ];
-
     const [index, setIndex] = useState(0);
     const [direction, setDirection] = useState(1);
 
@@ -60,15 +54,14 @@ export default function NourishingSection() {
                     >
                         {data.slice(index, index + cardsPerView).map((item, i) => (
                             <div className="n-card" key={i}>
-                                <img src={item.image} />
-
+                                <img src={item.image} alt={item.title} />
                                 <div className="overlay"></div>
                                 <div className="n-content">
                                     <h3>{item.title}</h3>
                                     <p>{item.desc}</p>
                                     <div className="card-footer">
-                                        <span className="card-meta">15 MIN • 01 JUN 23</span>
-                                        <Button btnstyle="white" className="recipe-btn"> READ MORE </Button>
+                                        <span className="card-meta">{item.meta}</span>
+                                        <Button btnstyle="white" className="recipe-btn">READ MORE</Button>
                                     </div>
                                 </div>
                             </div>

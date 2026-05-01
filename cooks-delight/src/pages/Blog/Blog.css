@@ -393,4 +393,63 @@
         flex-direction: column;
         gap: 16px;
     }
+
+    .image-meta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin: 24px 0;
+        flex-wrap: wrap;
+    }
+
+    /* Rating */
+    .rating {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .stars {
+        color: #ff9f32;
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .review-count {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    /* Dot separator */
+    .dot {
+        font-size: 14px;
+        color: #888;
+    }
+
+    /* Tags container */
+    .categories {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Tag styles */
+    .category-tag,
+    .cuisine-tag {
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        color: white;
+    }
+
+    /* Specific colors */
+    .category-tag {
+        background-color: #e54d3b;
+    }
+
+    .cuisine-tag {
+        background-color: #8bc34a;
+    }
 }

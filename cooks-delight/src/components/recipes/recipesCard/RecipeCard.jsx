@@ -1,7 +1,16 @@
 import "./RecipeCard.css";
 import Button from "../../common/button/Button";
+import { useNavigate } from "react-router-dom";
 
-const RecipeCard = ({ recipe, isTip, buttonText = "VIEW RECIPE" }) => {
+const RecipeCard = ({ recipe, buttonText = "VIEW RECIPE" }) => {
+
+  const isApiRecipe = recipe.time && recipe.level;
+  const isBasic = recipe.category && recipe.readTime;
+  const isTip = recipe.importance;
+  const navigate = useNavigate();
+  const handleViewRecipe = () => {
+    navigate(`/recipe/${recipe.id}`);
+  };
   return (
 
 
@@ -16,9 +25,13 @@ const RecipeCard = ({ recipe, isTip, buttonText = "VIEW RECIPE" }) => {
 
         <div className="recipe-footer">
           <span className="recipe-meta">
-            {recipe.time} - {recipe.level} - {recipe.serves}
+            {isApiRecipe && `${recipe.time} - ${recipe.level} - ${recipe.serves}`}
+
+            {isBasic && `${recipe.category} - ${recipe.readTime}`}
+
+            {isTip && `${recipe.importance} TIP`}
           </span>
-          <Button btnstyle="outline" className="recipe-btn">
+          <Button btnstyle="outline" className="recipe-btn" onClick={handleViewRecipe}   >
             {buttonText}
           </Button>
         </div>

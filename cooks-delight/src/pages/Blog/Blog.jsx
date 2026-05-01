@@ -113,7 +113,7 @@ const Blog = () => {
                                 <FontAwesomeIcon icon={faClock} /> {displayData.time}
                             </div>
                             <div className="meta-item">
-                                <Weight style={{ height: "1rem", width: "1rem" }} />{displayData.difficulty}
+                                <FaWeightHanging /> {displayData.difficulty}
                             </div>
                             <div className="meta-item">
                                 <FontAwesomeIcon icon={faBellConcierge} /> {displayData.serves}

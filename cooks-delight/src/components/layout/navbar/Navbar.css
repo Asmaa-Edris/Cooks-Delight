@@ -26,6 +26,7 @@ body {
   text-decoration: none;
 }
 
+
 .banner__brand-text {
   display: flex;
   flex-direction: column;
@@ -263,6 +264,10 @@ body {
     background: none;
     border: none;
     font-size: 28px;
+  }
+
+  .desktop-search {
+    display: none;
   }
 
   .navbar-expanded {

@@ -76,7 +76,7 @@ export default function About() {
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="container">
-          <FeaturedRecipes />
+          <FeaturedRecipes title="featured recipes" cardsPerView={2} dataSource="api"  />
         </div>
       </motion.section>
     </main>

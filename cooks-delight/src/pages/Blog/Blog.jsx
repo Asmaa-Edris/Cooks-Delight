@@ -139,11 +139,13 @@ const Blog = () => {
 
 
                         <div className="categories">
-                            {displayData.categories.slice(0, - 1).map((cat, i) => (
-                                <span key={i} className="category-tag">
-                                    {cat.toUpperCase()}
-                                </span>
-                            ))}
+                            {displayData.categories
+                                .filter(cat => cat.toLowerCase() !== displayData.cuisine.toLowerCase())
+                                .map((cat, i) => (
+                                    <span key={i} className="category-tag">
+                                        {cat.toUpperCase()}
+                                    </span>
+                                ))}
                         </div>
                         <span className="dot"> • </span>
 

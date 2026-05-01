@@ -1,50 +1,55 @@
 .tools-container {
   border-radius: 24px;
   border: 1px solid #2625223D;
-  max-width: 1320px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  padding:  0 20px;
+  max-width: 1400px;
+  margin: 80px auto 0 auto;
+  padding: 20px 30px;
+  box-sizing: border-box;
 }
 .tools-wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  flex-wrap: wrap; 
 }
 .tool-card {
   display: flex;
   align-items: flex-start;
-  flex: 1;
-  min-width: 250px;
-  gap: 15px;
-  padding:22px;
+  padding:20px;
+  gap: 16px;
+} 
 
-}
 .tool-icon {
   font-size: 32px;
   color: #333;
-  padding: 0 22px;
+  padding: 7px;
 }
 .tool-title {
-  color: #ff6b54; 
-  font-family: 'Inter', sans-serif; 
-  font-size: 16px;
-  font-weight: 700;
-  margin: 0 0 8px 0;
-  letter-spacing: 0.5px;
+  color: #EE6352;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+
 }
 .tool-description {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0;
-}
+  color: #262522;
+  font-family:"Roboto";
+  font-weight: 300;
+  font-style: Light;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 1%;
 
+}
 @media (max-width: 768px) {
   .tools-wrapper {
-    flex-direction: column;
-    padding: 10px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tools-container {
+    padding: 20px 15px;
   }
 }

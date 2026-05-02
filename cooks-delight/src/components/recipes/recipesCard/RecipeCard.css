@@ -1,21 +1,31 @@
+.container {
+  max-width: var(--max-width) !important;
+  margin: 0 auto !important;
+  padding: 0 var(--container-padding) !important;
+}
+
 .recipe-card {
-  background: #FFFBF2;
-  border-radius: 22px;
+  background: var(--white) !important;
+  border-radius: var(--br-main);
   overflow: hidden;
   transition: all 0.35s ease;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
+
 .recipe-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
+
 .recipe-image {
   width: 100%;
   height: 210px;
   overflow: hidden;
 }
+
 .recipe-image img {
   width: 100%;
   height: 100%;
@@ -23,66 +33,78 @@
   transition: 0.4s;
 }
 
-.recipe-card:hover img {
-  transform: scale(1.05);
-}
 .recipe-body {
-  padding: 20px 18px 18px;
+  padding: 30px 20px !important;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
+
 .recipe-title {
-  font-size: 19px;
-  font-weight: 600;
+  font-size: var(--fs-h3);
+  font-weight: 700;
   color: #1d1d1d;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
+
 .recipe-desc {
-  font-size: 13.5px;
-  color: #6f6f6f;
+  font-size: var(--fs-p2);
+  color: var(--text-dark);
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
+  height: 3.2em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: 300 !important;
 }
+
 .recipe-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
+  padding-top: 15px;
 }
 
 .recipe-meta {
-  font-size: 11.5px;
-  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-black);
   font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.meta-divider {
+  color: var(--primary-color);
+  font-weight: bold;
 }
 
 .recipe-btn {
-  display: inline-block;
-  border-radius: 999px;
+  padding: 10px 15px !important;
+  font-size: 14px !important;
 }
 
 @media (max-width: 768px) {
-  .recipe-image {
-    height: 200px;
-  }
-
-  .recipe-title {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .recipe-card {
-    border-radius: 18px;
-  }
   .recipe-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
-  }
-  .recipe-btn {
-    width: 100%;
+    gap: 15px;
   }
 
-  .recipe-btn button {
+  .recipe-meta {
     width: 100%;
-    text-align: center;
+    order: 2;
+  }
+
+  .recipe-btn,
+  .recipe-card .btn {
+    order: 2;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center;
+    padding: 14px 0 !important;
   }
 }

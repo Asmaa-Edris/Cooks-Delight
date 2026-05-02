@@ -8,6 +8,7 @@ import Home from './pages/Home/Home';
 import Tips from './pages/CookingTips/CookingTips';
 import Navbar from './components/layout/navbar/Navbar';
 import Footer from './components/layout/footer/Footer';
+import Banner from './components/layout/banner/Banner';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Recipies from './pages/Home/Recipes';
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      <Banner />
 
       <Footer />
     </div>

@@ -232,19 +232,6 @@ const Blog = () => {
                 <RecipeSlider title="Similar RECIPES" />
             </section>
 
-            {/* CTA */}
-            <section className="cta-section">
-                <div className="container">
-                    <div className="cta-content">
-                        <h3>JOIN THE FUN</h3>
-                        <h2>CREATE ACCOUNT NOW!</h2>
-                        <p>
-                            Unlock exclusive recipes, tips, and a personalized experience.
-                        </p>
-                        <button className="cta-btn">JOIN US</button>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

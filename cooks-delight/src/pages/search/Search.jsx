@@ -85,7 +85,6 @@ export default function Search() {
                 </div>
             </main >
 
-            <Banner />
         </>
     );
 }

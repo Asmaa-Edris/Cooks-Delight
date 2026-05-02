@@ -69,8 +69,8 @@ body {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--text-dark);
-}
 
+}
 
 
 .nav-links a::after {
@@ -82,16 +82,13 @@ body {
   height: 3px;
   background-color: var(--primary-red);
   border-radius: 4px;
-  transition: all 0.5s ease-in-out;
+  transition: width 0.3s ease;
 }
 
-
-
-
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text-dark);
+/* ADD THIS */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-actions {

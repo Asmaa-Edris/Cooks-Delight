@@ -1,4 +1,4 @@
-import FeaturedRecipes from "../about/FeaturedRecipes";
+import FeaturedRecipes from "../About/FeaturedRecipes";
 import "./cookingTips.css";
 import ToolsSection from "./ToolsSection";
 import { motion } from "framer-motion";
@@ -20,7 +20,8 @@ export default function CookingTips() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1>Our Essential Cooking Tips</h1>
+            <h1><span>Our Essential </span>
+              <span>CookingTips</span></h1>
           </motion.div>
 
           <motion.div
@@ -29,7 +30,7 @@ export default function CookingTips() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p>
+            <p className="hero-right">
               Welcome to Cooks Delight's treasure trove of cooking wisdom! Whether you're a seasoned chef or just starting your culinary journey, our cooking tips are designed to elevate your skills, enhance your kitchen experience, and bring joy to your cooking adventures.
             </p>
           </motion.div>

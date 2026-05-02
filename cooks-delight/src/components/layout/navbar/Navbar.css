@@ -8,7 +8,7 @@ body {
 
   margin: 24px 32px;
   padding: 12px 32px;
-  background-color: var(--bg-main) !;
+  background-color: var(--bg-main);
   border-radius: var(--br-main);
   border: solid 1px rgb(204, 202, 202);
   display: flex;
@@ -275,7 +275,6 @@ body {
     max-width: var(--max-width);
     margin: 20px 10px;
     padding: 12px 32px;
-    background-color: var(--bg-main) !;
     border-radius: var(--br-main);
     border: solid 1px rgb(204, 202, 202);
     display: flex;

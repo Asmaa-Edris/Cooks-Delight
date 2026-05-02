@@ -1,6 +1,6 @@
 .news-banner {
     padding: var(--section-gap) 0;
-    
+
 }
 
 .news-card {
@@ -8,14 +8,15 @@
     border-radius: var(--br-main);
     padding: 80px 20px;
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
     text-align: center;
     color: white;
 }
 
-.ellipse-1, .ellipse-2 {
+.ellipse-1,
+.ellipse-2 {
     position: absolute;
-    background-color: #ff6653; 
+    background-color: #ff6653;
     opacity: 0.5;
     z-index: 1;
     pointer-events: none;
@@ -48,14 +49,14 @@
     font-weight: bold;
     display: block;
     font-family: "Roboto", sans-serif;
-    color :var(--text-light: #FFFBF2)
+    color: var(--text-light, #FFFBF2)
 }
 
 .news-title {
     text-transform: uppercase;
     font-size: 80px;
     font-weight: bold;
-letter-spacing: -0.01em;
+    letter-spacing: -0.01em;
     margin-bottom: 20px;
     max-width: 800px;
     margin-left: auto;
@@ -69,8 +70,8 @@ letter-spacing: -0.01em;
     font-weight: bold;
     max-width: 580px;
     margin: 0 auto 48px;
-font-family: "Roboto", sans-serif;
-color:var(--text-light: #FFFBF2)
+    font-family: "Roboto", sans-serif;
+    color: var(--text-light, #FFFBF2)
 }
 
 .news-form {
@@ -80,7 +81,7 @@ color:var(--text-light: #FFFBF2)
     display: flex;
     max-width: 520px;
     margin: 0 auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .news-input {
@@ -93,11 +94,12 @@ color:var(--text-light: #FFFBF2)
     color: #282626;
 
 }
+
 .news-input::placeholder {
     font-family: "Roboto", sans-serif;
-    font-weight: bold; 
-    color: #999; 
-    opacity: 1; 
+    font-weight: bold;
+    color: #999;
+    opacity: 1;
     text-transform: capitalize;
 }
 

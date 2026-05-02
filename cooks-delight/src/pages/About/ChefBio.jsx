@@ -17,7 +17,7 @@ export default function ChefBio() {
           <img src={Author} alt="Chef" />
 
           <div className="follow-bar">
-            <span>Follow me</span>
+            <span>FOLLOW ME</span>
             <div className="icons">
               <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon facebook">
                 <FaFacebookF /></a>

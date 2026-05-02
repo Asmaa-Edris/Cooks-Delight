@@ -21,7 +21,7 @@ export default function Navbar() {
       navigate(`/search`);
     }
   };
-  const isAuthPage = location.pathname === "/signup" || location.pathname === "/login"
+  const isAuthPage = location.pathname === "/register" || location.pathname === "/login"
 
   return (
     <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""} ${isAuthPage ? "auth-navbar" : ""}`}>

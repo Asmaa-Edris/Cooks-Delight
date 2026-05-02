@@ -19,7 +19,10 @@ export default function About() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h1>Welcome to<br /> my Culinary Haven!</h1>
+          <h1>
+            <span>Welcome to my  </span>
+            <span>Culinary Haven!</span>
+          </h1>
         </motion.div>
 
         <motion.div
@@ -76,7 +79,7 @@ export default function About() {
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="container">
-          <FeaturedRecipes title={"FEATURED RECIPES"} />
+          <FeaturedRecipes title="featured recipes" cardsPerView={2} dataSource="api" />
         </div>
       </motion.section>
     </main>

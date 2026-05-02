@@ -3,21 +3,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 100px 0 100px 0;
-  gap: 120px;
-  min-height: 400px;
+  padding: 80px 40px;
+  /* add side padding */
+  gap: 80px;
 }
 
 .hero-left {
-  flex: 1;
+  max-width: 600px;
+  /* controls where text wraps */
 }
 
-.hero-left h1 {
+.hero-left h1 span {
+  display: inline;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: var(--fs-h1);
+  font-size: clamp(44px, 6vw, 72px);
   line-height: 1.05;
   text-transform: uppercase;
+  letter-spacing: -1px;
+  margin: 0;
 }
 
 .hero-right {
@@ -95,28 +99,27 @@
   color: var(--text-dark);
 }
 
-.social-icons {
+.icons {
   display: flex;
-  gap: 15px;
+  gap: 12px;
 }
 
-.social-link {
-  color: var(--text-light);
-  font-size: 10px;
-  transition: 0.3s ease;
-  background-color: #000;
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
+.icon {
+  width: 28px;
+  height: 28px;
+  color: black;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 24px;
+  transition: 0.3s ease;
   text-decoration: none;
 }
 
-.social-link:hover {
+.icon:hover {
   background-color: var(--primary-orange);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .chef-title {

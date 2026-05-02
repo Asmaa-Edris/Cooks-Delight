@@ -1,118 +1,120 @@
-# \# 🍳 Cooks Delight – Cooking \& Recipes Blog
+# 🍳 Cooks Delight – Cooking & Recipes Blog
 
-# 
+A React-based cooking and recipes blog built from a Figma design, integrating the DummyJSON API for dynamic recipe content. Browse featured recipes, search dishes, explore cooking tips, and log in to your personal cooking space.
 
-# Cooks Delight is a modern, responsive \*\*React-based cooking and recipes blog\*\* built from a Figma design and powered by the DummyJSON API.  
+---
 
-# It delivers a clean editorial cooking experience where users can explore recipes, read cooking tips, search for dishes, and manage a personal cooking space.
+## 🔗 Links
 
-# 
+- **Figma Design:** [View Design](https://www.figma.com/design/EK0IVka3EakJw5lMCdhpv6/-FREE--Cooking---Recipes-Blog-Template--Community-?node-id=0-1&t=D20ycjrz44uhw0BD-1)
+- **API:** [DummyJSON](https://dummyjson.com/)
 
-# \---
+---
 
-# 
+## ✨ Features
 
-# \## 📌 Project Overview
+- **Home Page** – Hero section, category showcase, featured recipes carousel, recipe grid with filtering, about preview, and CTA banner
+- **Recipes / Search Results Page** – Dynamic search results powered by DummyJSON, recipe card grid
+- **Recipe Details Page** – Full recipe info including ingredients, instructions, nutrition, rating, tags, and similar recipes
+- **Cooking Tips Page** – Editorial blog-style tips, newest recipes, and locally stored tip cards
+- **About Us Page** – Brand story, chef narrative, gallery, and featured recipes
+- **Login Page** – Split-layout login with DummyJSON authentication, token handling, and form validation
 
-# 
+---
 
-# Cooks Delight allows users to:
+## 🛠️ Tech Stack
 
-# \- Browse featured and categorized recipes
+| Category | Technology |
+|----------|------------|
+| Framework | React |
+| API | DummyJSON |
+| Styling | CSS / TailwindCSS *(update as needed)* |
+| Routing | React Router DOM |
+| State Management | React Context / useState *(update as needed)* |
+| Version Control | Git & GitHub |
 
-# \- Search recipes dynamically
+---
 
-# \- View detailed recipe information
+## 🚀 Getting Started
 
-# \- Explore cooking tips and editorial content
+### Prerequisites
 
-# \- Read about the blog/brand story
+- Node.js (v18 or higher)
+- npm or yarn
 
-# \- Log in to a personal cooking experience
+### Installation
 
-# 
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-org/cooks-delight.git
+   cd cooks-delight
+   ```
 
-# The project emphasizes \*\*UI fidelity, responsiveness, clean architecture, and API integration\*\*.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-# 
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-# \---
+4. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
 
-# 
+---
 
-# \## 🎯 Project Objective
+## 🌐 API Integration
 
-# 
+This project uses the [DummyJSON API](https://dummyjson.com/). No API key is required.
 
-# The main goal of this project is to build a visually polished and fully functional recipe website that:
+| Feature | Endpoint |
+|--------|----------|
+| Fetch all recipes | `GET /recipes` |
+| Search recipes | `GET /recipes/search?q={query}` |
+| Recipe details | `GET /recipes/{id}` |
+| Filter by meal type | `GET /recipes/meal-type/{type}` |
+| User login | `POST /auth/login` |
+| Get current user | `GET /auth/me` |
+| Refresh session | `POST /auth/refresh` |
 
-# 
+---
 
-# \- Matches the provided Figma design accurately
+## 📱 Responsive Design
 
-# \- Uses \*\*DummyJSON API\*\* for dynamic content
+The website is fully responsive across:
+- 🖥️ Desktop / Laptop
+- 📱 Tablet
+- 📲 Mobile Phone
 
-# \- Supports search, filtering, and navigation flows
+Sections reflow gracefully with no overlap, clipping, or broken spacing.
 
-# \- Displays rich recipe detail pages
+---
 
-# \- Includes login functionality
+## 🎨 Animations & Transitions
 
-# \- Works seamlessly across all devices
+- Hover effects on recipe cards, buttons, chips, and nav items
+- Smooth carousel/slider transitions
+- Section fade-in and reveal effects
+- Filter and search result transitions
+- CTA button hover emphasis
 
-# \- Demonstrates clean React structure and Git collaboration
+---
 
-# 
+## 🧠 State & Error Handling
 
-# \---
+The app handles:
+- ⏳ Loading states while fetching data
+- 🔍 Empty states for no search results
+- ❌ API errors with user-friendly messages
+- 🖼️ Missing images or incomplete recipe data
 
-# 
 
-# \## 🛠️ Tech Stack
+---
 
-# 
+## 📝 License
 
-# \- ⚛️ React
-
-# \- 🎨 CSS / SCSS (or Tailwind if used)
-
-# \- 🔗 DummyJSON API → https://dummyjson.com/
-
-# \- 🎯 Figma Design → https://www.figma.com/design/EK0IVka3EakJw5lMCdhpv6/-FREE--Cooking---Recipes-Blog-Template--Community-?node-id=0-1\&t=D20ycjrz44uhw0BD-1
-
-# 
-
-# \---
-
-# 
-
-# \## 📁 Project Structure
-
-# 
-
-# ```bash
-
-# src/
-
-# │
-
-# ├── assets/            # Images, icons, static files
-
-# ├── components/        # Reusable UI components (Navbar, Cards, Footer, etc.)
-
-# ├── pages/             # Application pages (Home, Recipes, About, etc.)
-
-# ├── services/          # API calls (DummyJSON integration)
-
-# ├── data/              # Static data (tips, local content)
-
-# ├── hooks/             # Custom React hooks
-
-# ├── utils/             # Helper functions
-
-# ├── styles/            # Global styles and theme
-
-# ├── App.jsx
-
-# └── main.jsx
-
+This project was built for educational purposes as part of a front-end development course.

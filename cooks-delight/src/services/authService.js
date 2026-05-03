@@ -45,7 +45,14 @@ export const authService = {
   logout: () => {
     localStorage.removeItem('userToken');
     localStorage.removeItem('userData');
-  }
+  },
+  isAuthenticated: () => {
+      const token = localStorage.getItem('userToken');
+      return !!token; 
+    },
+    
+    getCurrentUser: () => {
+      return JSON.parse(localStorage.getItem('userData'));
+    }
 };
-
 export default authService;

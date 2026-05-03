@@ -1,36 +1,33 @@
 /* --- Hero Layout --- */
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 .about-hero {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 80px 40px;
-  /* add side padding */
-  gap: 80px;
+  align-items: center; 
+  padding: 100px 0 100px 0; 
+  gap: 120px;
+  min-height: 400px; 
 }
 
 .hero-left {
-  max-width: 600px;
-  /* controls where text wraps */
+  flex: 1; 
 }
 
-.hero-left h1 span {
-  display: inline;
-  font-family: 'Montserrat', sans-serif;
+.hero-left h1 {
+  font-family: 'Montserrat', sans-serif; 
   font-weight: 800;
-  font-size: clamp(44px, 6vw, 72px);
+  font-size: var(--fs-h1); 
   line-height: 1.05;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  margin: 0;
 }
 
 .hero-right {
-  flex: 1;
+  flex: 1; 
   display: flex;
   flex-direction: column;
   gap: 25px;
   max-width: 648px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; 
   font-size: var(--fs-p1);
   line-height: 1.6;
   color: var(--text-gray);
@@ -48,7 +45,7 @@
 .content-card {
   border: 1px solid rgba(38, 37, 34, 0.1);
   border-radius: var(--br-main);
-  padding: 100px 40px;
+  padding: 100px 40px; 
   display: flex;
   flex-direction: column;
   gap: 120px;
@@ -64,16 +61,16 @@
 
 .chef-image-wrapper {
   width: 100%;
-  max-width: 540px;
+  max-width: 540px; 
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column; 
+  gap: 20px; 
 }
 
 .main-chef-img {
   width: 100%;
-  height: 480px;
+  height: 480px; 
   border-radius: var(--br-main);
   object-fit: cover;
   display: block;
@@ -83,11 +80,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 100%; 
   background-color: var(--bg-main);
   padding: 12px 28px;
-  border-radius: var(--br-main);
-  border: 1px solid rgba(19, 19, 18, 0.349);
+  border-radius: var(--br-main); 
+  border: 1px solid rgba(19, 19, 18, 0.349); 
 }
 
 .follow-text {
@@ -99,27 +96,28 @@
   color: var(--text-dark);
 }
 
-.icons {
+.social-icons {
   display: flex;
-  gap: 12px;
+  gap: 15px;
 }
 
-.icon {
-  width: 28px;
-  height: 28px;
-  color: black;
-  border-radius: 6px;
+.social-link {
+  color: var(--text-light);
+  font-size: 10px;
+  transition: 0.3s ease;
+  background-color: #000;
+  width: 18px; 
+  height: 18px;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
-  transition: 0.3s ease;
   text-decoration: none;
 }
 
-.icon:hover {
+.social-link:hover {
   background-color: var(--primary-orange);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .chef-title {
@@ -150,7 +148,7 @@
 
 .gallery-grid img {
   width: 100%;
-  height: 240px;
+  height: 240px; 
   border-radius: 24px;
   object-fit: cover;
   transition: transform 0.4s ease;
@@ -160,8 +158,7 @@
   transform: scale(1.02);
 }
 
-.chef-description p,
-.regards {
+.chef-description p, .regards {
   margin-bottom: 20px;
   color: var(--text-gray);
   font-family: 'Roboto', sans-serif;
@@ -172,27 +169,18 @@
 
 
 @media (max-width: 1200px) {
-
-  .about-hero,
-  .chef-container {
+  .about-hero, .chef-container {
     gap: 50px;
   }
-
-  .hero-left h1 {
-    font-size: calc(var(--fs-h1) * 0.8);
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .hero-left h1 { font-size: calc(var(--fs-h1) * 0.8); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 /* --- Responsive Fixes --- */
 
 @media (max-width: 768px) {
   .about-hero {
     flex-direction: column;
-    padding: 60px 20px 40px 20px;
+    padding: 60px 20px 40px 20px; 
     gap: 0px;
   }
 
@@ -214,7 +202,7 @@
   .content-card {
     padding: 40px 15px;
     gap: 60px;
-    border: none;
+    border: none; 
   }
 
   .chef-container {
@@ -225,16 +213,16 @@
 
   .chef-image-wrapper {
     max-width: 100%;
-    order: 1;
+    order: 1; 
   }
 
   .main-chef-img {
-    height: 320px;
+    height: 320px; 
     border-radius: 20px;
   }
 
   .chef-bio-content {
-    order: 2;
+    order: 2; 
     padding: 0 5px;
   }
 
@@ -244,7 +232,7 @@
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr); 
     padding: 0;
   }
 

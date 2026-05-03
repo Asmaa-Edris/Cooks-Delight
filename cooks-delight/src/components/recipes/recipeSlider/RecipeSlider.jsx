@@ -56,7 +56,7 @@ const RecipeSlider = ({ title }) => {
   }
 
   return (
-    <div className="recipe-slider">
+    <div className="recipe-slider container">
       <div className="slider-header">
         <h2 className="slider-title">{title}</h2>
         <div className="arrows">

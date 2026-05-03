@@ -38,13 +38,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .slider-header h2 {
   font-family: Montserrat;
   font-weight: 700;
-  font-style: Bold;
+  font-style: var(--fs-h2);
   font-size: 40px;
   line-height: 100%;
   letter-spacing: 1%;
@@ -62,7 +62,7 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1px solid #262522;
+  border: 1px solid #262522; 
   background: transparent;
   display: flex;
   align-items: center;
@@ -70,22 +70,19 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: 12px;
-  color: #262522;
+  color: #262522!important; 
 }
 
-.arrows button svg {
-  font-size: 20px;
+.arrows button:disabled {
+  opacity: 0.25;           
+  border-color: #262522!important;    
+  color: #262522;           
+  cursor: not-allowed;      
 }
 
 .arrows button:hover:not(:disabled) {
   background: #262522;
-  color: #f0ebe1;
-}
-
-.arrows button:disabled {
-  opacity: 0.2;
-  border-color: #26252250;
-  cursor: not-allowed;
+  color: #f0ebe1!important;
 }
 
 /* CARDS */
@@ -112,6 +109,11 @@
 
   .slider-header h2 {
     font-size: 24px;
+  }
+  .slider-header {
+    flex-direction: column;
+    align-items: flex-start;
+  
   }
 
   .slider-track {

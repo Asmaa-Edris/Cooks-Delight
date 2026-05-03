@@ -9,7 +9,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* margin-bottom: 25px; */
     padding-top: 35px !important;
     padding-bottom: 35px !important;
     margin-top: 15px;
@@ -18,7 +17,7 @@
 .nourishing-header h2 {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
-    font-size: 40px;
+    font-size: var(--fs-h2);
 }
 
 .arrows {
@@ -30,7 +29,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid #26252230;
+    border: 1px solid black;
     background: transparent;
     display: flex;
     align-items: center;
@@ -134,20 +133,19 @@
 
 @media (max-width: 768px) {
     .nourishing {
-        padding: 40px 15px !important;
+        padding: 20px 15px !important;
     }
 
     .nourishing-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
-        margin-bottom: 30px;
+        gap: 7px;
+        margin-bottom:5px;
     }
 
     .nourishing-header h2 {
         font-size: 26px !important;
         width: 100%;
-        white-space: normal;
     }
 
     .arrows {

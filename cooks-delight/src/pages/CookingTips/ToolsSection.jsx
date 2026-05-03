@@ -27,7 +27,7 @@ const ToolsSection = () => {
   ];
 
   return (
-    <section className="tools-container">
+    <section className="tools-container  container">
       <div className="tools-wrapper">
         {toolsData.map((item) => (
           <div key={item.id} className="tool-card">

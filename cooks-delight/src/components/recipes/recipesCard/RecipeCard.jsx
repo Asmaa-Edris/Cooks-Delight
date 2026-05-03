@@ -31,7 +31,7 @@ const RecipeCard = ({ recipe, buttonText = "VIEW RECIPE" }) => {
 
             {isTip && `${recipe.importance} TIP`}
           </span>
-          <Button btnstyle="outline" className="recipe-btn" onClick={handleViewRecipe}   >
+          <Button btnstyle="outline" className="recipe-btn  " onClick={handleViewRecipe}   >
             {buttonText}
           </Button>
         </div>

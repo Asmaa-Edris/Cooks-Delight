@@ -1,5 +1,5 @@
 import React from "react";
-import LoginForm from "./LoginForm";
+import LoginForm from "./loginForm";
 import './loginstyle.css';
 import loginImg from "./login.png";
 import { motion } from "framer-motion";

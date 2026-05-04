@@ -1,5 +1,5 @@
 import FeaturedRecipes from "../about/FeaturedRecipes";
-import "./cookingTips.css";
+import "./CookingTips.css";
 import ToolsSection from "./ToolsSection";
 import { motion } from "framer-motion";
 import NourishingSection from './NourishingSection';

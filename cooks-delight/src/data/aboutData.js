@@ -1,14 +1,14 @@
 // src/data/aboutData.js
 
 // Import Images from Assets
-import img1 from "../assets/images/image1.png";
-import img2 from "../assets/images/image2.png";
-import img3 from "../assets/images/image3.png";
-import img4 from "../assets/images/image4.png";
-import img5 from "../assets/images/image5.png";
-import img6 from "../assets/images/image6.png";
-import img7 from "../assets/images/image7.png";
-import img8 from "../assets/images/image.png";
+import img1 from "../assets/images/Image1.png";
+import img2 from "../assets/images/Image2.png";
+import img3 from "../assets/images/Image3.png";
+import img4 from "../assets/images/Image4.png";
+import img5 from "../assets/images/Image5.png";
+import img6 from "../assets/images/Image6.png";
+import img7 from "../assets/images/Image7.png";
+import img8 from "../assets/images/Image.png";
 import img9 from "../assets/images/about1.jpg";
 import img10 from "../assets/images/about2.jpg";
 import img11 from "../assets/images/about3.jpg";

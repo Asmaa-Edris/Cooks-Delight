@@ -1,15 +1,8 @@
-.blog-page {
-    background-color: var(--bg-main);
-    padding-bottom: 80px;
-    font-family: var(--font-main);
-
-}
 
 .blog-container {
     border-radius: 32px;
     border: 1px solid #26252220;
-    width: 100%;
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
 }
 
@@ -368,6 +361,10 @@
 
 .cta-btn:hover {
     transform: scale(1.05);
+}
+.similar-recipes{
+    position: relative;
+    top: 25px;
 }
 
 @media (max-width: 1024px) {

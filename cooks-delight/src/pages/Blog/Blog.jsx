@@ -8,6 +8,7 @@ import pizzaImg from '../../assets/images/pizza.png';
 import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
 import { recipeService } from "../../services/recipeService";
 import { Weight } from 'lucide-react';
+import ChefBio from '../About/ChefBio';
 
 const normalizeRecipe = (recipe = {}) => ({
     title: recipe.title || recipe.name || "Untitled Recipe",
@@ -99,7 +100,7 @@ const Blog = () => {
 
     return (
         <div className="blog-page">
-            <div className="blog-container">
+            <div className="blog-container ">
 
                 {/* HEADER */}
                 <header className="blog-header">
@@ -231,7 +232,6 @@ const Blog = () => {
             <section className="similar-recipes container">
                 <RecipeSlider title="Similar RECIPES" />
             </section>
-
         </div>
     );
 };

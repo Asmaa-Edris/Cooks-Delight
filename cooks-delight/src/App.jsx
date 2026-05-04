@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'; // أضفنا hooks
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // أضفنا Router و useLocation
+import React, { useState, useEffect } from 'react'; 
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -11,8 +11,7 @@ import Home from './pages/Home/Home';
 import Tips from './pages/CookingTips/CookingTips'; 
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
-import Recipies from './pages/Home/Recipes';
-
+import Recipes from './pages/Home/Recipes'; 
 // Components
 import Navbar from './components/layout/navbar/Navbar';
 import Footer from './components/layout/footer/Footer';
@@ -37,30 +36,22 @@ function AppContent() {
   return (
     <div className="App">
       {showLoader && <Loader />}
-      
-      {/* التعديل هنا: شيلنا الـ Navbar من الشرط عشان يظهر دايماً */}
       <Navbar /> 
-
       <main style={{ minHeight: '80vh' }}>
         <Routes>
-    {/* مسارات عامة الكل يشوفها */}
-    <Route path="/" element={<Home />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/register" element={<Register />} />
-    <Route path="/about" element={<About />} />
-
-    {/* مسارات محمية: لازم لوجن عشان يدخلها */}
-    <Route element={<ProtectedRoute />}>
-        <Route path="/recipes" element={<Recipies />} />
-        <Route path="/recipe/:id" element={<Blog />} />
-        <Route path="/tips" element={<Tips />} />
-    </Route>
-    
-    <Route path="/search" element={<Search />} />
-</Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/about" element={<About />} />
+          <Route element={<ProtectedRoute />}>
+              <Route path="/recipes" element={<Recipes />} />
+              <Route path="/recipe/:id" element={<Blog />} />
+              <Route path="/tips" element={<Tips />} />
+          </Route>
+          <Route path="/search" element={<Search />} />
+          <Route path="/blog/:id" element={<Blog />} />
+        </Routes>
       </main>
-
-      {/* الـ Banner والـ Footer يفضلوا مخفيين عادي في صفحات الـ Auth */}
       {!shouldHideLayout && (
         <>
           <Banner />
@@ -70,6 +61,7 @@ function AppContent() {
     </div>
   );
 }
+
 export default function App() {
   return (
     <Router>
@@ -77,10 +69,6 @@ export default function App() {
         position="top-right" 
         autoClose={3000} 
         theme="colored"
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        pauseOnHover
       />
       <ScrollToTop />
       <AppContent />

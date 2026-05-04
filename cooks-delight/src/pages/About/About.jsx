@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./About.css";
 import ChefBio from "./ChefBio";
-import FeaturedRecipes from "./FeaturedRecipes";
+import FeaturedRecipes from "../about/FeaturedRecipes";
 import { gallery } from "../../data/aboutData";
 import Button from "../../components/common/button/Button";
 

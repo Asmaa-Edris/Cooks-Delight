@@ -15,6 +15,7 @@ import About from './pages/About/About';
 import CookingTips from './pages/CookingTips/CookingTips';
 import Login from './pages/Login/login';
 import Register from './pages/register/Register';
+import Feedback from './pages/Feedback/Feedback';
 
 function AppContent() {
   const [showLoader, setShowLoader] = useState(false);
@@ -43,6 +44,8 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/feedback" element={<Feedback />} />
+
         </Routes>
       </main>
 

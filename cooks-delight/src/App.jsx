@@ -9,8 +9,8 @@ import Blog from './pages/Blog/Blog';
 import Search from './pages/search/Search';
 import Home from './pages/Home/Home';
 import Tips from './pages/CookingTips/CookingTips'; 
-import Login from './pages/Login/Login';
-import Register from './pages/Register/Register';
+import Login from './pages/Login/login';
+import Register from './pages/register/Register';
 import Recipes from './pages/Home/Recipes'; 
 // Components
 import Navbar from './components/layout/navbar/Navbar';

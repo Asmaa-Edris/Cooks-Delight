@@ -9,6 +9,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [desktopSearchOpen, setDesktopSearchOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   
   const navigate = useNavigate();
@@ -38,7 +39,10 @@ export default function Navbar() {
     navigate(val ? `/search?q=${encodeURIComponent(val)}` : `/search`, { replace: true });
   };
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setMobileSearchOpen(false);
+  };
 
   const handleLogout = () => {
     localStorage.removeItem('userToken');
@@ -52,15 +56,17 @@ export default function Navbar() {
     <nav className={`navbar ${menuOpen ? "navbar-expanded" : ""} ${isAuthPage ? "auth-navbar" : ""} ${isScrolled ? "scrolled" : ""}`}>
       
       <div className="nav-top-row">
-        <Link to="/" className="banner__brand" onClick={closeMenu}>
-          <div className="banner__logo-icon">
-            <img src={logo} alt="Logo" />
-          </div>
-          <div className="banner__brand-text">
-            <span className={`banner__brand-name ${menuOpen ? "dropdown-text-white" : ""}`}>Cooks</span>
-            <span className={`banner__brand-sub ${menuOpen ? "dropdown-text-white" : ""}`}>Delight</span>
-          </div>
-        </Link>
+        {!menuOpen && (
+          <Link to="/" className="banner__brand">
+            <div className="banner__logo-icon">
+              <img src={logo} alt="Logo" />
+            </div>
+            <div className="banner__brand-text">
+              <span className="banner__brand-name">Cooks</span>
+              <span className="banner__brand-sub">Delight</span>
+            </div>
+          </Link>
+        )}
 
         {!isAuthPage && !menuOpen && (
           <ul className="nav-links">
@@ -114,21 +120,54 @@ export default function Navbar() {
 
       {!isAuthPage && menuOpen && (
         <div className="dropdown-container">
-          <button className="close-btn-styled" onClick={closeMenu}><FiX /></button>
+          <div className="menu-header-row">
+            <Link to="/" className="banner__brand" onClick={closeMenu}>
+              <div className="banner__logo-icon">
+                <img src={logo} alt="Logo" />
+              </div>
+              <div className="banner__brand-text">
+                <span className="banner__brand-name dropdown-text-white">Cooks</span>
+                <span className="banner__brand-sub dropdown-text-white">Delight</span>
+              </div>
+            </Link>
+            <button className="close-btn-styled" onClick={closeMenu}><FiX /></button>
+          </div>
+
           <ul className="mobile-links">
             <li><NavLink to="/" onClick={closeMenu}>HOME</NavLink></li>
             <li><NavLink to="/recipes" onClick={closeMenu}>RECIPES</NavLink></li>
             <li><NavLink to="/tips" onClick={closeMenu}>COOKING TIPS</NavLink></li>
             <li><NavLink to="/about" onClick={closeMenu}>ABOUT US</NavLink></li>
-            
-            {isAuthenticated && (
-              <>
-                <li><span className="mobile-user-greet">Hello, {firstName}</span></li>
-                <li><span className="mobile-logout-text" onClick={handleLogout}>LOGOUT</span></li>
-              </>
-            )}
-            
           </ul>
+
+          <div className="mobile-interaction-area">
+            <div className="mobile-search-row">
+              <button 
+                className={`mobile-search-toggle ${mobileSearchOpen ? "active" : ""}`}
+                onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+              >
+                <FaSearch />
+              </button>
+            </div>
+
+            {mobileSearchOpen && (
+              <div className="mobile-search-field-wrapper">
+                <input
+                  type="text"
+                  placeholder="Search recipes..."
+                  value={query}
+                  onChange={handleSearchChange}
+                  autoFocus
+                />
+              </div>
+            )}
+          </div>
+
+          <div className="socials-wrapper">
+             <a href="#" className="social-icon-btn"><FaFacebookF /></a>
+             <a href="#" className="social-icon-btn"><FaInstagram /></a>
+             <a href="#" className="social-icon-btn"><FaYoutube /></a>
+          </div>
         </div>
       )}
     </nav>

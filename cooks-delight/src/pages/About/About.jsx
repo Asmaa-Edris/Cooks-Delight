@@ -6,6 +6,7 @@ import ChefBio from "./ChefBio";
 import FeaturedRecipes from "./FeaturedRecipes";
 import { gallery } from "../../data/aboutData";
 import Button from "../../components/common/button/Button";
+import RecipeSlider from "../../components/recipes/recipeSlider/RecipeSlider";
 
 export default function About() {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ export default function About() {
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className="container">
-          <FeaturedRecipes title="featured recipes" cardsPerView={2} dataSource="api" />
+        <RecipeSlider title="Featured Recipes" cardsPerView={2} />
         </div>
       </motion.section>
     </main>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiUser } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube, FaSearch } from "react-icons/fa";
 import "./Navbar.css";
 import logo from './Logo.svg';
@@ -9,30 +9,43 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [desktopSearchOpen, setDesktopSearchOpen] = useState(false);
-  const [mobileSearchVisible, setMobileSearchVisible] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   
   const navigate = useNavigate();
   const location = useLocation();
+
+  const isAuthenticated = !!localStorage.getItem('userToken');
+  const userData = JSON.parse(localStorage.getItem('userData'));
+  const firstName = userData ? userData.firstName : "";
 
   const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
   const query = new URLSearchParams(location.search).get('q') || '';
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = () => setUserDropdownOpen(false);
+    if (userDropdownOpen) window.addEventListener('click', handleClickOutside);
+    return () => window.removeEventListener('click', handleClickOutside);
+  }, [userDropdownOpen]);
 
   const handleSearchChange = (e) => {
     const val = e.target.value;
     navigate(val ? `/search?q=${encodeURIComponent(val)}` : `/search`, { replace: true });
   };
 
-  const closeMenu = () => {
+  const closeMenu = () => setMenuOpen(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('userToken');
+    localStorage.removeItem('userData');
+    setUserDropdownOpen(false);
     setMenuOpen(false);
-    setMobileSearchVisible(false);
+    navigate('/login'); 
   };
 
   return (
@@ -58,18 +71,12 @@ export default function Navbar() {
           </ul>
         )}
 
-        {menuOpen && (
-          <button className="close-btn-styled" onClick={closeMenu}>
-            <FiX />
-          </button>
-        )}
-
         {!isAuthPage && !menuOpen && (
           <div className="nav-actions">
             <div className={`search-container ${desktopSearchOpen ? "active" : ""}`}>
               <input
                 type="text"
-                placeholder="Search for recipes"
+                placeholder="Search..."
                 value={query}
                 onChange={handleSearchChange}
                 className="search-input"
@@ -78,6 +85,26 @@ export default function Navbar() {
                 <FaSearch />
               </div>
             </div>
+
+            {isAuthenticated && (
+              <div className="user-profile-wrapper" onClick={(e) => { e.stopPropagation(); setUserDropdownOpen(!userDropdownOpen); }}>
+                <div className={`user-icon-circle ${userDropdownOpen ? "active-icon" : ""}`}>
+                  <FiUser />
+                </div>
+                
+                {userDropdownOpen && (
+                  <div className="user-dropdown-card">
+                    <div className="user-card-header">
+                      <span className="welcome-text">Welcome back,</span>
+                      <span className="display-name">{firstName}</span>
+                    </div>
+                    <div className="divider-line"></div>
+                    <button className="logout-btn-styled" onClick={handleLogout}>Logout</button>
+                  </div>
+                )}
+              </div>
+            )}
+
             <button className="menu-btn" onClick={() => setMenuOpen(true)}>
               <FiMenu />
             </button>
@@ -87,44 +114,21 @@ export default function Navbar() {
 
       {!isAuthPage && menuOpen && (
         <div className="dropdown-container">
+          <button className="close-btn-styled" onClick={closeMenu}><FiX /></button>
           <ul className="mobile-links">
             <li><NavLink to="/" onClick={closeMenu}>HOME</NavLink></li>
             <li><NavLink to="/recipes" onClick={closeMenu}>RECIPES</NavLink></li>
             <li><NavLink to="/tips" onClick={closeMenu}>COOKING TIPS</NavLink></li>
             <li><NavLink to="/about" onClick={closeMenu}>ABOUT US</NavLink></li>
-          </ul>
-
-          <div className="mobile-interaction-area">
-            <div className="mobile-buttons-row">
-              <button 
-                className={`mobile-search-btn ${mobileSearchVisible ? "is-active" : ""}`}
-                onClick={() => setMobileSearchVisible(!mobileSearchVisible)}
-              >
-                <FaSearch />
-              </button>
-              <button className="mobile-sub-button" onClick={() => { navigate('/register'); closeMenu(); }}>
-                SUBSCRIBE
-              </button>
-            </div>
-
-            {mobileSearchVisible && (
-              <div className="mobile-search-input-field">
-                <input 
-                  type="text" 
-                  autoFocus
-                  placeholder="Search for recipes" 
-                  value={query}
-                  onChange={handleSearchChange}
-                />
-              </div>
+            
+            {isAuthenticated && (
+              <>
+                <li><span className="mobile-user-greet">Hello, {firstName}</span></li>
+                <li><span className="mobile-logout-text" onClick={handleLogout}>LOGOUT</span></li>
+              </>
             )}
-          </div>
-
-          <div className="socials">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="icon"><FaFacebookF /></a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="icon"><FaInstagram /></a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="icon"><FaYoutube /></a>
-          </div>
+            
+          </ul>
         </div>
       )}
     </nav>

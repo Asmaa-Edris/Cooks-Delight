@@ -82,6 +82,15 @@
   font-weight: 600;
 }
 
+@media(max-width:998){
+    .recipe-btn, .recipe-card .btn {
+    order: 2;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center;
+    padding: 12px 0 !important;
+  }
+}
 
 
 @media (max-width: 768px) {

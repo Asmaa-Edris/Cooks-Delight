@@ -26,8 +26,7 @@ export default function Search() {
             setError(null);
             try {
                 const data = await recipeService.searchRecipes(searchTerm);
-                // Based on DummyJSON structure which recipeService seems to use (judging by axios.js likely)
-                // recipes/search usually returns { recipes: [], total: ..., skip: ..., limit: ... }
+              
                 setRecipes(data.recipes || []);
             } catch (err) {
                 console.error("Search error:", err);
@@ -51,7 +50,7 @@ export default function Search() {
                         </h2>
                     ) : (
                         <h2 style={{ marginTop: "30px", fontWeight: "normal", color: "var(--text-gray)" }}>
-                            Search for your favorite recipes in the navbar
+                            Search for your favorite recipes 
                         </h2>
                     )}
                 </div>

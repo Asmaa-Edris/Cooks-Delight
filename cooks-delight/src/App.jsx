@@ -63,8 +63,7 @@ function AppContent() {
 }
 
 export default function App() {
-  return (
-    <Router>
+  return ( <>
       <ToastContainer 
         position="top-right" 
         autoClose={3000} 
@@ -72,6 +71,6 @@ export default function App() {
       />
       <ScrollToTop />
       <AppContent />
-    </Router>
+  </>
   );
 }

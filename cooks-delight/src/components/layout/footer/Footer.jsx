@@ -1,6 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import Button from '../../common/button/Button'; 
+import { useNavigate, Link } from 'react-router-dom';
 import './Footer.css';
 
 export default function Footer() {
@@ -26,18 +26,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation Section */}
-          <nav className="footer__nav" aria-label="Footer navigation">
-            <ul className="footer__nav-list">
-              <li className="footer__nav-item"><a href="/" className="footer__nav-link">HOME</a></li>
-              <li className="footer__nav-divider"></li>
-              <li className="footer__nav-item"><a href="/recipes" className="footer__nav-link">RECIPES</a></li>
-              <li className="footer__nav-divider"></li>
-              <li className="footer__nav-item"><a href="/tips" className="footer__nav-link">COOKING TIPS</a></li>
-              <li className="footer__nav-divider"></li>
-              <li className="footer__nav-item"><a href="/about" className="footer__nav-link">ABOUT US</a></li>
-            </ul>
-          </nav>
+        {/* Navigation Section */}
+<nav className="footer__nav" aria-label="Footer navigation">
+  <ul className="footer__nav-list">
+    <li className="footer__nav-item">
+      <Link to="/" className="footer__nav-link">HOME</Link>
+    </li>
+    <li className="footer__nav-divider"></li>
+    <li className="footer__nav-item">
+      <Link to="/recipes" className="footer__nav-link">RECIPES</Link>
+    </li>
+    <li className="footer__nav-divider"></li>
+    <li className="footer__nav-item">
+      <Link to="/tips" className="footer__nav-link">COOKING TIPS</Link>
+    </li>
+    <li className="footer__nav-divider"></li>
+    <li className="footer__nav-item">
+      <Link to="/about" className="footer__nav-link">ABOUT US</Link>
+    </li>
+  </ul>
+</nav>
 
           {/* Social Icons & Login */}
           <div className="footer__actions">
